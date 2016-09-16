@@ -1,0 +1,1 @@
+# piwigo-plugin-simplecopyright
