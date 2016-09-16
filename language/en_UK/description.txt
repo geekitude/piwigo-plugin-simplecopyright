@@ -1,0 +1,1 @@
+Show a global copyright, respecting corresponding IPTC field if it is set.
