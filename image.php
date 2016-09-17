@@ -1,5 +1,4 @@
 <?php
-
 // Add an event handler for a prefilter
 add_event_handler('loc_begin_picture', 'simplecr_set_prefilter_add_to_pic_info', 55 );
 
@@ -7,18 +6,16 @@ add_event_handler('loc_begin_picture', 'simplecr_set_prefilter_add_to_pic_info',
 add_event_handler('loc_begin_picture', 'simplecr_add_image_vars_to_template');
 
 // Add the prefilter to the template
-function simplecr_set_prefilter_add_to_pic_info()
-{
+function simplecr_set_prefilter_add_to_pic_info() {
 	global $template;
 	$template->set_prefilter('picture', 'simplecr_add_to_pic_info');
 }
 
 // Insert the template for the copyright display
-function simplecr_add_to_pic_info($content, &$smarty)
-{
-
+function simplecr_add_to_pic_info($content, &$smarty) {
     // load plugin language file
     load_language('plugin.lang', SIMPLECR_PATH);
+
 	// Add the information after the author - so before the createdate
 	$search = '#class="imageInfoTable">#';
 	
@@ -34,26 +31,24 @@ function simplecr_add_to_pic_info($content, &$smarty)
 }
 
 // Assign values to the variables in the template
-function simplecr_add_image_vars_to_template()
-{
+function simplecr_add_image_vars_to_template() {
 	global $page, $template, $prefixeTable, $conf;
 
 	// Show block only on the photo page
-	if ( !empty($page['image_id']) )
-	{
+	if ( !empty($page['image_id']) ) {
         $simplecr = safe_unserialize($conf['SimpleCopyright']);
         $simplecr_label = $simplecr['label'];
         $simplecr_url = $simplecr['url'];
         $simplecr_descr = $simplecr['descr'];
 			
 		// Sending data to the template
-    $template->assign(
-      array	(
-        'SIMPLECR_LABEL' => $simplecr_label,
-        'SIMPLECR_URL' => $simplecr_url,
-        'SIMPLECR_DESCR' => $simplecr_descr
-      )
-    );
+        $template->assign(
+            array	(
+                'SIMPLECR_LABEL' => $simplecr_label,
+                'SIMPLECR_URL' => $simplecr_url,
+                'SIMPLECR_DESCR' => $simplecr_descr
+            )
+        );
 	}
 }
 ?>
