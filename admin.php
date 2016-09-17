@@ -32,12 +32,12 @@ $template->set_filenames(
 );
 
 $select_options = array(
-  'by' => l10n('BY'),
-  'by-sa' => l10n('BY-SA'),
-  'by-nd' => l10n('BY-ND'),
-  'by-nc' => l10n('BY-NC'),
-  'by-nc-sa' => l10n('BY-NC-SA'),
-  'by-nc-nd' => l10n('BY-NC-ND'),
+  'by' => l10n('CC BY 4.0'),
+  'by-sa' => l10n('CC BY-SA 4.0'),
+  'by-nd' => l10n('CC BY-ND 4.0'),
+  'by-nc' => l10n('CC BY-NC 4.0'),
+  'by-nc-sa' => l10n('CC BY-NC-SA 4.0'),
+  'by-nc-nd' => l10n('CC BY-NC-ND 4.0'),
   'custom' => l10n('Custom'),
   );
 

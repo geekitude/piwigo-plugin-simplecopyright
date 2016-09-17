@@ -20,7 +20,7 @@ $lang['Custom copyright label shown by Piwigo'] = 'Custom copyright label shown 
 $lang['Any copyright requires a link to a full description to be of any value'] = 'Any copyright requires a link to a full description to be of any value';
 $lang['Will be shown as a tooltip when hovering copyright link'] = 'Will be shown as a tooltip when hovering copyright link';
 
-$lang['Except where otherwise noted, content on this wiki is licensed under the following license:'] = 'Except where otherwise noted, content on this wiki is licensed under the following license:';
+$lang['Except where otherwise noted, content on this website is licensed under the following license:'] = 'Except where otherwise noted, content on this website is licensed under the following license:';
 
 $lang['enablefootercrcheckbox'] = 'Enable site footer copyright or not';
 ?>
