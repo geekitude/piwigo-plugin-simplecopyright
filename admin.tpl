@@ -36,12 +36,12 @@
         <ul>
             <li>
                 <label>
-                    <b>{'Choice:'|translate}</b>
+                    <b>{'Choice:'|@translate}</b>
                     {html_options id=simplecr_default_dropdown name=select options=$select_options selected=$simplecr.select}
                 </label>
             </li>
             <li>
-                <b>{'Summary:'|translate}</b> <i id="simplecr_descr"></i>
+                <b>{'Summary:'|@translate}</b> <i id="simplecr_descr"></i>
             </li>
             <li>
                 <label>
@@ -56,21 +56,21 @@
         <ul>
             <li>
                 <label>
-                    <b>{'Label:'|translate}</b>
+                    <b>{'Label:'|@translate}</b>
                     <input type='text' name='customlabel' id='customlabel' value='{$simplecr.customlabel|escape}' />
                 </label>
                 <a class="icon-info-circled-1 showInfo" title="{'Custom copyright label shown by Piwigo'|@translate}"></a>
             </li>
             <li>
                 <label>
-                    <b>{'URL:'|translate}</b>
+                    <b>{'URL:'|@translate}</b>
                     <input type='text' name='customurl' id='customurl' value='{$simplecr.customurl|escape}' />
                 </label>
                 <a class="icon-info-circled-1 showInfo" title="{'Any copyright requires a link to a full description to be of any value'|@translate}"></a>
             </li>
             <li>		
                 <label>		
-                    <b>{'Short description:'|translate}</b>		
+                    <b>{'Short description:'|@translate}</b>		
                     <input type='text' name='customdescr' id='customdescr' value='{$simplecr.customdescr|escape}' />		
                 </label>		
                 <a class="icon-info-circled-1 showInfo" title="{'Will be shown as a tooltip when hovering copyright link'|@translate}"></a>		
@@ -78,6 +78,8 @@
          </ul>
     </fieldset>
 
-    <p class="formButtons"><input type="submit" name="save_config" value="{'Save Settings'|translate}"></p>
+    <p><img src="plugins/SimpleCopyright/images/important.png" alt="*IMPORTANT*" height="48" width="48" align="middle" style="margin-right: 5px;"><i>{"Note that displaying a copyright on a web page isn't as efficient as adding it in picture's metadatas."|@translate}</i></p>
+
+    <p class="formButtons"><input type="submit" name="save_config" value="{'Save Settings'|@translate}"></p>
 
 </form>

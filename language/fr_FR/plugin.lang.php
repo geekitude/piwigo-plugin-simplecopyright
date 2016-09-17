@@ -10,4 +10,5 @@
     $lang['URL:'] = 'URL :';
     $lang['Short description:'] = 'Description courte :';
     $lang['see below'] = 'voir ci-dessous';
+    $lang['Note that displaying a copyright on a web page isn\'t as efficient as adding it in picture\'s metadatas.'] = 'Notez qu\'afficher des droits d\'auteur sur une page web n\'est pas aussi efficace que de les intégrer aux métadonnées de l\'image.';
 ?>
