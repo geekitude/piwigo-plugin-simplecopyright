@@ -16,14 +16,17 @@ function simplecr_set_prefilter_add_to_pic_info()
 // Insert the template for the copyright display
 function simplecr_add_to_pic_info($content, &$smarty)
 {
+
+    // load plugin language file
+    load_language('plugin.lang', SIMPLECR_PATH);
 	// Add the information after the author - so before the createdate
 	$search = '#class="imageInfoTable">#';
 	
 	$replacement = 'class="imageInfoTable">
-	<div id="copyright" class="imageInfo">
+	<div id="simplecr" class="imageInfo">
 		<dt>{\'Copyright\'|@translate}</dt>
 		<dd>
-			<a target="_blanc" href="{$SIMPLECR_URL}" title="{$SIMPLECR_DESCR}">{$SIMPLECR_LABEL}</a>
+			<a target="_blank" href="{$SIMPLECR_URL}" title="{$SIMPLECR_DESCR}">{$SIMPLECR_LABEL}</a>
     </dd>
 	</div>';
 
