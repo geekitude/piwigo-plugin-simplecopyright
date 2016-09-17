@@ -18,7 +18,7 @@ Description: Affichage d'un copyright de base en respectant le champs IPTC corre
     // Hook on to an event to show the administration page.
     add_event_handler('get_admin_plugin_menu_links', 'simplecr_admin_menu');
     add_event_handler('init', 'simplecr_init');
-    add_event_handler('loc_end_page_tail', 'simplecr_footer');
+    add_event_handler('loc_end_page_tail', 'simplecr_footer', 40);
 
 /* +-----------------------------------------------------------------------+
  * | Plugin admin                                                          |
