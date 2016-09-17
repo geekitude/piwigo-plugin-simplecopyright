@@ -9,4 +9,5 @@
     $lang['Label:'] = 'Label:';
     $lang['URL:'] = 'URL:';
     $lang['Short description:'] = 'Short description:';
+    $lang['see below'] = 'see below';
 ?>

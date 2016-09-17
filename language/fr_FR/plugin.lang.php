@@ -9,4 +9,5 @@
     $lang['Label:'] = 'Etiquette :';
     $lang['URL:'] = 'URL :';
     $lang['Short description:'] = 'Description courte :';
+    $lang['see below'] = 'voir ci-dessous';
 ?>
