@@ -1,22 +1,25 @@
 {footer_script}
-jQuery('#simplecr_default_dropdown').change(function() {
-    var $sumary = "";
-    var $selected = $(this).val();
-    if ($selected === "by") {
-        $sumary = "You are free to share (copy and redistribute the material in any medium or format) or adapt (remix, transform, and build upon the material) for any purpose, even commercially but must give appropriate credit.";
-    } else if ($selected === "by-sa") {
-        $sumary = "You are free to share (copy and redistribute the material in any medium or format) or adapt (remix, transform, and build upon the material) for any purpose, even commercially but must give appropriate credit. If you remix, transform, or build upon the material, you must distribute your contributions under the same license as the original.";
-    } else if ($selected === "by-nd") {
-        $sumary = "You are free to share (copy and redistribute the material in any medium or format) for any purpose, even commercially. If you remix, transform, or build upon the material, you may not distribute the modified material.";
-    } else if ($selected === "by-nc") {
-        $sumary = "You are free to share (copy and redistribute the material in any medium or format) or adapt (remix, transform, and build upon the material) for any non-commercial purpose but must give appropriate credit.";
-    } else if ($selected === "by-nc-sa") {
-        $sumary = "You are free to share (copy and redistribute the material in any medium or format) or adapt (remix, transform, and build upon the material) for any non-commercial purpose but must give appropriate credit. If you remix, transform, or build upon the material, you must distribute your contributions under the same license as the original.";
-    } else if ($selected === "by-nc-nd") {
-        $sumary = "You are free to share (copy and redistribute the material in any medium or format) for any non-commercial purpose but must give appropriate credit. If you remix, transform, or build upon the material, you may not distribute the modified material.";
+    jQuery(document).ready(setSummary);
+    jQuery('#simplecr_default_dropdown').change(setSummary);
+
+    function setSummary() {
+        var $summary = "";
+        var $selected = jQuery('#simplecr_default_dropdown').val();
+        if ($selected === "by") {
+            $summary = "You are free to share (copy and redistribute the material in any medium or format) or adapt (remix, transform, and build upon the material) for any purpose, even commercially but must give appropriate credit.";
+        } else if ($selected === "by-sa") {
+            $summary = "You are free to share (copy and redistribute the material in any medium or format) or adapt (remix, transform, and build upon the material) for any purpose, even commercially but must give appropriate credit. If you remix, transform, or build upon the material, you must distribute your contributions under the same license as the original.";
+        } else if ($selected === "by-nd") {
+            $summary = "You are free to share (copy and redistribute the material in any medium or format) for any purpose, even commercially. If you remix, transform, or build upon the material, you may not distribute the modified material.";
+        } else if ($selected === "by-nc") {
+            $summary = "You are free to share (copy and redistribute the material in any medium or format) or adapt (remix, transform, and build upon the material) for any non-commercial purpose but must give appropriate credit.";
+        } else if ($selected === "by-nc-sa") {
+            $summary = "You are free to share (copy and redistribute the material in any medium or format) or adapt (remix, transform, and build upon the material) for any non-commercial purpose but must give appropriate credit. If you remix, transform, or build upon the material, you must distribute your contributions under the same license as the original.";
+        } else if ($selected === "by-nc-nd") {
+            $summary = "You are free to share (copy and redistribute the material in any medium or format) for any non-commercial purpose but must give appropriate credit. If you remix, transform, or build upon the material, you may not distribute the modified material.";
+        }
+        $('#simplecr_descr').text($summary);
     }
-  $('#simplecr_descr').text($sumary);
-});
 {/footer_script}
 
 <!-- Show the title of the plugin -->
@@ -36,7 +39,7 @@ jQuery('#simplecr_default_dropdown').change(function() {
                 </label>
             </li>
             <li>
-                <b>{'Summary:'|translate}</b> <i id="simplecr_descr">{$simplecr_descr}</i>
+                <b>{'Summary:'|translate}</b> <i id="simplecr_descr"></i>
             </li>
             <li>
                 <label>
