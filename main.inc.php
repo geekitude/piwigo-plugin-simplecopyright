@@ -39,7 +39,7 @@ Description: Affichage d'un copyright de base en respectant le champs IPTC corre
     *   - load language
     */
     function simplecr_init() {
-        global $conf, $simplecr, $simplecr_label, $simplecr_url;
+        global $conf, $simplecr, $simplecr_label, $simplecr_url, $simplecr_descr;
 
         // prepare plugin configuration
         $simplecr = safe_unserialize($conf['SimpleCopyright']);

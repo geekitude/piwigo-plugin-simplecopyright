@@ -18,7 +18,7 @@
     }
 
     // Fetch the template.
-    global $template;
+    global $template, $simplecr_descr;
 
     // Add our template to the global template
     $template->set_filenames(
@@ -41,6 +41,7 @@
     // send config to template
     $template->assign(array(
         'simplecr' => safe_unserialize($conf['SimpleCopyright']),
+        'simplecr_descr' => $simplecr_descr,
         'select_options' => $select_options
     ));
 
