@@ -20,6 +20,10 @@ Description: Affichage d'un copyright de base en respectant le champs IPTC corre
     add_event_handler('init', 'simplecr_init');
     add_event_handler('loc_end_page_tail', 'simplecr_footer');
 
+/* +-----------------------------------------------------------------------+
+ * | Plugin admin                                                          |
+ * +-----------------------------------------------------------------------+ */
+
     // Add an entry to the 'Plugins' menu.
     function simplecr_admin_menu($menu) {
         array_push(
@@ -45,27 +49,27 @@ Description: Affichage d'un copyright de base en respectant le champs IPTC corre
         $simplecr = safe_unserialize($conf['SimpleCopyright']);
 
         if ($simplecr['select'] == "by") {
-            $simplecr_label = "Attribution 4.0 International (CC BY 4.0)";
+            $simplecr_label = "CC Attribution 4.0 International";
             $simplecr_url = "https://creativecommons.org/licenses/by/4.0/";
             $simplecr_descr = "You are free to share (copy and redistribute the material in any medium or format) or adapt (remix, transform, and build upon the material) for any purpose, even commercially but must give appropriate credit.";
         } elseif ($simplecr['select'] == "by-sa") {
-            $simplecr_label = "Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)";
+            $simplecr_label = "CC Attribution-ShareAlike 4.0 International";
             $simplecr_url = "https://creativecommons.org/licenses/by-sa/4.0/";
             $simplecr_descr = "You are free to share (copy and redistribute the material in any medium or format) or adapt (remix, transform, and build upon the material) for any purpose, even commercially but must give appropriate credit. If you remix, transform, or build upon the material, you must distribute your contributions under the same license as the original.";
         } elseif ($simplecr['select'] == "by-nd") {
-            $simplecr_label = "Attribution-NoDerivatives 4.0 International (CC BY-ND 4.0)";
+            $simplecr_label = "CC Attribution-NoDerivatives 4.0 International";
             $simplecr_url = "https://creativecommons.org/licenses/by-nd/4.0/";
             $simplecr_descr = "You are free to share (copy and redistribute the material in any medium or format) for any purpose, even commercially. If you remix, transform, or build upon the material, you may not distribute the modified material.";
         } elseif ($simplecr['select'] == "by-nc") {
-            $simplecr_label = "Attribution-NonCommercial 4.0 International (CC BY-NC 4.0)";
+            $simplecr_label = "CC Attribution-NonCommercial 4.0 International";
             $simplecr_url = "https://creativecommons.org/licenses/by-nc/4.0/";
             $simplecr_descr = "You are free to share (copy and redistribute the material in any medium or format) or adapt (remix, transform, and build upon the material) for any non-commercial purpose but must give appropriate credit.";
         } elseif ($simplecr['select'] == "by-nc-sa") {
-            $simplecr_label = "Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)";
+            $simplecr_label = "CC Attribution-NonCommercial-ShareAlike 4.0 International";
             $simplecr_url = "https://creativecommons.org/licenses/by-nc-sa/4.0/";
             $simplecr_descr = "You are free to share (copy and redistribute the material in any medium or format) or adapt (remix, transform, and build upon the material) for any non-commercial purpose but must give appropriate credit. If you remix, transform, or build upon the material, you must distribute your contributions under the same license as the original.";
         } elseif ($simplecr['select'] == "by-nc-nd") {
-            $simplecr_label = "Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)";
+            $simplecr_label = "CC Attribution-NonCommercial-NoDerivatives 4.0 International";
             $simplecr_url = "https://creativecommons.org/licenses/by-nc-nd/4.0/";
             $simplecr_descr = "You are free to share (copy and redistribute the material in any medium or format) for any non-commercial purpose but must give appropriate credit. If you remix, transform, or build upon the material, you may not distribute the modified material.";
         } elseif ($simplecr['select'] == "custom") {
@@ -90,5 +94,12 @@ Description: Affichage d'un copyright de base en respectant le champs IPTC corre
             $template->append('footer_elements', $template->parse('simplecrfooter', true));
         }
     }
+
+/* +-----------------------------------------------------------------------+
+ * | Plugin image                                                          |
+ * +-----------------------------------------------------------------------+ */
+
+// Add information to the picture's description (The copyright's name)
+include_once(dirname(__FILE__).'/image.php');
 
 ?>
