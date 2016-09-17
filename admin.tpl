@@ -42,13 +42,6 @@
                 </label>
                 <a class="icon-info-circled-1 showInfo" title="{'Any copyright requires a link to a full description to be of any value'|@translate}"></a>
             </li>
-            <li>
-                <label>
-                    <b>{'Short description :'|translate}</b>
-                    <input type='text' name='customdescr' id='customdescr' value='{$simplecr.customdescr|escape}' />
-                </label>
-                <a class="icon-info-circled-1 showInfo" title="{'Will be shown as a tooltip when hovering copyright link'|@translate}"></a>
-            </li>
         </ul>
     </fieldset>
 

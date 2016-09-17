@@ -105,12 +105,12 @@ function simplecr_footer()
 //var_dump($lang);
 //$pat=trigger_change('AP_render_content', $conf['persoFooter']);
 //var_dump($simplecr_url);
-$copyright_string = '<a href='.$simplecr_url.' title="See licence">'.$simplecr_label.'</a>';
+$copyright_link = '<a href='.$simplecr_url.' title="See licence">'.$simplecr_label.'</a>';
 //$copyright_string .= '<div id="helpContent"><fieldset><legend>{\'Visit your Piwigo!\'|@translate}</legend><p class="nextStepLink"><a href="admin.php?page=plugin-TakeATour">{\'Take a tour and discover the features of your Piwigo gallery » Go to the available tours\'|@translate}</a></p></fieldset>';
 //$copyright_string .= {\'Except where otherwise noted, content on this wiki is licensed under the following license:\'|translate};
 //		 if (!empty($pat))
 //			{
-				$template->assign('simplecrfooter', $copyright_string);
+				$template->assign('simplecrfooter', $copyright_link);
 //			}
 
 // send variables to template

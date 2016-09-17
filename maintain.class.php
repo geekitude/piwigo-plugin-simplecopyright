@@ -8,7 +8,6 @@ class SimpleCopyright_maintain extends PluginMaintain
     'enablefootercr' => true,
     'customlabel' => 'Custom copyright label',
     'customurl' => 'http://custom.sample/full_text',
-    'customdescr' => 'Custom copyright short description',
     );
 
   function install($plugin_version, &$errors=array())
