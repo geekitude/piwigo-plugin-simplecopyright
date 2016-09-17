@@ -20,7 +20,7 @@ function simplecr_add_to_pic_info($content, &$smarty)
 	$search = '#class="imageInfoTable">#';
 	
 	$replacement = 'class="imageInfoTable">
-	<div id="simplecr_name" class="imageInfo">
+	<div id="copyright" class="imageInfo">
 		<dt>{\'Copyright\'|@translate}</dt>
 		<dd>
 			<a target="_blanc" href="{$SIMPLECR_URL}" title="{$SIMPLECR_DESCR}">{$SIMPLECR_LABEL}</a>

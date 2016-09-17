@@ -11,4 +11,5 @@
     $lang['Short description:'] = 'Short description:';
     $lang['see below'] = 'see below';
     $lang['Note that displaying a copyright on a web page isn\'t as efficient as adding it in picture\'s metadatas.'] = 'Note that displaying a copyright on a web page isn\'t as efficient as adding it in picture\'s metadatas.';
+    $lang['Copyright'] = 'Copyright';
 ?>
