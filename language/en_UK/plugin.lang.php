@@ -1,6 +1,7 @@
 <?php
     $lang['Default copyright'] = 'Default copyright';
-    $lang['Choice :'] = 'Choice :';
+    $lang['Choice:'] = 'Choice:';
+    $lang['Summary:'] = 'Summary:';
     $lang['Show default copyright in site footer'] = 'Show default copyright in site footer';
     $lang['Custom copyright label shown by Piwigo'] = 'Custom copyright label shown by Piwigo';
     $lang['Any copyright requires a link to a full description to be of any value'] = 'Any copyright requires a link to a full description to be of any value';

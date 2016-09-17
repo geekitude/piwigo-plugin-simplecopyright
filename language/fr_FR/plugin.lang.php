@@ -1,6 +1,7 @@
 <?php
     $lang['Default copyright'] = 'Droits d\'auteur par défaut';
-    $lang['Choice :'] = 'Choix :';
+    $lang['Choice:'] = 'Choix :';
+    $lang['Summary:'] = 'Résumé :';
     $lang['Show default copyright in site footer'] = 'Afficher les droits d\'auteur par défaut dans le pied de page du site';
     $lang['Custom copyright label shown by Piwigo'] = 'Custom copyright label shown by Piwigo';
     $lang['Any copyright requires a link to a full description to be of any value'] = 'Any copyright requires a link to a full description to be of any value';
