@@ -12,6 +12,7 @@
             'enablefootercr' => isset($_POST['enablefootercr']),
             'customlabel' => $_POST['customlabel'],
             'customurl' => $_POST['customurl'],
+            'customdescr' => $_POST['customdescr'],
         );
         conf_update_param('SimpleCopyright', $conf['SimpleCopyright']);
     }

@@ -4,9 +4,6 @@
 </div>
  
 <!-- Show content in a nice box -->
- 
-{'Hello World'|@translate} !
-
 <form method="post" action="" class="properties">
     <fieldset>
         <legend>{'Default copyright'|@translate}</legend>
@@ -16,6 +13,7 @@
                     <b>{'Choice :'|translate}</b>
                     {html_options name=select options=$select_options selected=$simplecr.select}
                 </label>
+                <i>Blah blah blah</i>
             </li>
             <li>
                 <label>
@@ -42,7 +40,14 @@
                 </label>
                 <a class="icon-info-circled-1 showInfo" title="{'Any copyright requires a link to a full description to be of any value'|@translate}"></a>
             </li>
-        </ul>
+            <li>		
+                <label>		
+                    <b>{'Short description :'|translate}</b>		
+                    <input type='text' name='customdescr' id='customdescr' value='{$simplecr.customdescr|escape}' />		
+                </label>		
+                <a class="icon-info-circled-1 showInfo" title="{'Will be shown as a tooltip when hovering copyright link'|@translate}"></a>		
+            </li>
+         </ul>
     </fieldset>
 
     <p class="formButtons"><input type="submit" name="save_config" value="{'Save Settings'|translate}"></p>
