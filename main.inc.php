@@ -2,8 +2,7 @@
 /*
 Version: 1.0
 Plugin Name: Simple Copyright
-Plugin URI: // Here comes a link to the Piwigo extension gallery, after
-           // publication of your plugin. For auto-updates of the plugin.
+Plugin URI: http://piwigo.org/ext/extension_view.php?eid=839
 Author: Geekitude
 Description: Affichage d'un copyright de base en respectant le champs IPTC correspondant s'il existe.
 */
