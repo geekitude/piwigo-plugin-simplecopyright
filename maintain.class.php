@@ -21,16 +21,16 @@ class SimpleCopyright_maintain extends PluginMaintain {
         }
     }
 
-// FONCTION A SUPPRIMER UNE FOIS LES OPTIONS FONCTIONNELLES
-function activate($plugin_version, &$errors=array()) {
-global $conf;
-conf_update_param('SimpleCopyright', $this->default_conf, true);
-}
+// FONCTION A DESACTIVER UNE FOIS LES OPTIONS FONCTIONNELLES
+//function activate($plugin_version, &$errors=array()) {
+//global $conf;
+//conf_update_param('SimpleCopyright', $this->default_conf, true);
+//}
 
-// FONCTION A SUPPRIMER UNE FOIS LES OPTIONS FONCTIONNELLES
-function deactivate($plugin_version, &$errors=array()) {
-conf_delete_param('SimpleCopyright');
-}
+// FONCTION A DESACTIVER UNE FOIS LES OPTIONS FONCTIONNELLES
+//function deactivate($plugin_version, &$errors=array()) {
+//conf_delete_param('SimpleCopyright');
+//}
 
     function update($old_version, $new_version, &$errors=array()) {
         $this->install($new_version, $errors);

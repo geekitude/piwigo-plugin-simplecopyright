@@ -1,6 +1,6 @@
 <?php
 /*
-Version: 1.0
+Version: 1.01
 Plugin Name: Simple Copyright
 Plugin URI: http://piwigo.org/ext/extension_view.php?eid=839
 Author: Geekitude
@@ -20,7 +20,7 @@ Description: Affichage d'un copyright de base en respectant le champs IPTC corre
     add_event_handler('loc_end_page_tail', 'simplecr_footer', 40);
 
 /* +-----------------------------------------------------------------------+
- * | Plugin admin                                                          |
+ * | Admin Page                                                            |
  * +-----------------------------------------------------------------------+ */
 
     // Add an entry to the 'Plugins' menu.
@@ -95,7 +95,7 @@ Description: Affichage d'un copyright de base en respectant le champs IPTC corre
     }
 
 /* +-----------------------------------------------------------------------+
- * | Plugin image                                                          |
+ * | Image Page                                                            |
  * +-----------------------------------------------------------------------+ */
 
 // Add information to the picture's description (The copyright's name)
