@@ -38,7 +38,7 @@
         } elseif ($_POST['select'] == "no-license") {
             $simplecr_label = "All Rights Reserved";
             $simplecr_url = "https://en.wikipedia.org/wiki/All_rights_reserved";
-            $simplecr_descr = "You have no right to reuse this material in any way. Note that \"All Rights Reserved\" formula does not have any legal value left in any juridiction but is used here to prevent ambiguity.";
+            $simplecr_descr = "There is no license granting you with any right to reuse any material from this website in any way, refer to copyrights. Note that 'All Rights Reserved' formula does not have any legal value left in any juridiction but is used here to prevent ambiguity.";
         }
         $conf['SimpleCopyright'] = array(
             'select' => $_POST['select'],

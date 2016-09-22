@@ -3,14 +3,14 @@ defined('PHPWG_ROOT_PATH') or die('Hacking attempt!');
 
 class SimpleCopyright_maintain extends PluginMaintain {
     private $default_conf = array(
-        'select' => 'by-nc-nd',
+        'select' => 'no-license',
         'enablefootercr' => true,
         'customlabel' => 'Custom license label',
         'customurl' => 'http://custom.sample/full_text',
         'customdescr' => 'Custom license short description',
-        'label' => "CC Attribution-NonCommercial-NoDerivatives 4.0 International",
-        'url' => "https://creativecommons.org/licenses/by-nc-nd/4.0/",
-        'descr' => "You are free to share (copy and redistribute the material in any medium or format) for any non-commercial purpose but must give appropriate credit. If you remix, transform, or build upon the material, you may not distribute the modified material.",
+        'label' => "All Rights Reserved",
+        'url' => "https://en.wikipedia.org/wiki/All_rights_reserved",
+        'descr' => "There is no license granting you with any right to reuse any material from this website in any way, refer to copyrights. Note that 'All Rights Reserved' formula does not have any legal value left in any juridiction but is used here to prevent ambiguity.",
     );
 
     function install($plugin_version, &$errors=array()) {
@@ -23,13 +23,11 @@ class SimpleCopyright_maintain extends PluginMaintain {
 
     function activate($plugin_version, &$errors=array()) {
         global $conf;
-        conf_update_param('SimpleCopyright', $this->default_conf, true);
-    }
 
-// FONCTION A DESACTIVER UNE FOIS LES OPTIONS FONCTIONNELLES
-//function deactivate($plugin_version, &$errors=array()) {
-//conf_delete_param('SimpleCopyright');
-//}
+        if (empty($conf['SimpleCopyright'])) {
+            conf_update_param('SimpleCopyright', $this->default_conf, true);
+        }
+    }
 
     function update($old_version, $new_version, &$errors=array()) {
         $this->install($new_version, $errors);

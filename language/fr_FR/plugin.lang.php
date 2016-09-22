@@ -19,10 +19,10 @@
     $lang['Note that displaying a copyright and/or a license on a web page isn\'t as legally efficient as adding them in picture\'s metadatas, it only makes them more visible.'] = 'Notez qu\'afficher des droits d\'auteur et/ou une licence sur une page web n\'est pas aussi légalement efficace que de les intégrer aux métadonnées de l\'image, cela les rends juste plus visibles.';
 
     $lang['Except where otherwise noted, content on this website is licensed under the following license:'] = 'Sauf mention contraire, le contenu de ce site web est placé sous les termes de la licence suivante :';
-    $lang['Except where otherwise noted, there is no license granted on this website\'s content, wich means it is protected by corresponding copyright'] = 'Sauf mention contraire, aucune licence n\'est accordée sur le contenu de ce site web, ce qui signifie qu\'il est protégé par les drtoits d\'auteur correspondants';
+    $lang['Except where otherwise noted, there is no license granted on this website\'s content, wich means it is protected by corresponding copyright'] = 'Sauf mention contraire, aucune licence n\'est accordée sur le contenu de ce site web, ce qui signifie qu\'il est protégé par les droits d\'auteur correspondants';
     $lang['Label:'] = 'Etiquette :';
     $lang['URL:'] = 'URL :';
     $lang['Short description:'] = 'Description courte :';
-    $lang['All Rights Reserved'] = 'Tous Droits Réservés';
     $lang['Copyright'] = 'Droits d\'auteur';
+    //$lang['All Rights Reserved'] = 'Tous Droits Réservés';
 ?>
