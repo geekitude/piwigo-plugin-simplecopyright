@@ -1,15 +1,21 @@
 <?php
-    $lang['Default copyright'] = 'Droits d\'auteur par défaut';
+    $lang['Default license'] = 'Licence par défaut';
     $lang['Choice:'] = 'Choix :';
     $lang['Summary:'] = 'Résumé :';
-    $lang['Show default copyright in site footer'] = 'Afficher les droits d\'auteur par défaut dans le pied de page du site';
-    $lang['Custom copyright label shown by Piwigo'] = 'Custom copyright label shown by Piwigo';
-    $lang['Any copyright requires a link to a full description to be of any value'] = 'Any copyright requires a link to a full description to be of any value';
+    $lang['see below'] = 'voir ci-dessous';
+    $lang['Display default license in site footer'] = 'Afficher la licence par défaut dans le pied de page du site';
+    $lang['Custom license'] = 'Licence personnalisée';
+    $lang['No license'] = 'Aucune licence';
+    $lang['Custom license label shown by Piwigo'] = 'Etiquette montrée par Piwigo pour la licence personnalisée';
+    $lang['Any license requires a link to a full description to be of any value'] = 'Toute licence nécessite un lien vers une description complète pour avoir une quelconque valeur';
+    $lang['Will be shown as a tooltip when hovering license link'] = 'Sera affiché dans la bulle d\'information en survolant le lien vers la licence';
+    $lang['Note that displaying a copyright and/or a license on a web page isn\'t as efficient as adding them in picture\'s metadatas, it only makes them more visible.'] = 'Notez qu\'afficher des droits d\'auteur et/ou une licence sur une page web n\'est pas aussi efficace que de les intégrer aux métadonnées de l\'image, cela les rends juste plus visibles.';
+
     $lang['Except where otherwise noted, content on this website is licensed under the following license:'] = 'Sauf mention contraire, le contenu de ce site web est placé sous les termes de la licence suivante :';
+    $lang['Except where otherwise noted, there is no license granted on this website\'s content, wich means it is protected by corresponding copyright'] = 'Sauf mention contraire, aucune licence n\'est accordée sur le contenu de ce site web, ce qui signifie qu\'il est protégé par les drtoits d\'auteur correspondants';
     $lang['Label:'] = 'Etiquette :';
     $lang['URL:'] = 'URL :';
     $lang['Short description:'] = 'Description courte :';
-    $lang['see below'] = 'voir ci-dessous';
-    $lang['Note that displaying a copyright on a web page isn\'t as efficient as adding it in picture\'s metadatas.'] = 'Notez qu\'afficher des droits d\'auteur sur une page web n\'est pas aussi efficace que de les intégrer aux métadonnées de l\'image.';
+    $lang['All Rights Reserved'] = 'Tous Droits Réservés';
     $lang['Copyright'] = 'Droits d\'auteur';
 ?>

@@ -35,6 +35,10 @@
             $simplecr_label = $_POST['customlabel'];
             $simplecr_url = $_POST['customurl'];
             $simplecr_descr = $_POST['customdescr'];
+        } elseif ($_POST['select'] == "no-license") {
+            $simplecr_label = "All Rights Reserved";
+            $simplecr_url = "https://en.wikipedia.org/wiki/All_rights_reserved";
+            $simplecr_descr = "You have no right to reuse this material in any way. Note that \"All Rights Reserved\" formula does not have any legal value left in any juridiction but is used here to prevent ambiguity.";
         }
         $conf['SimpleCopyright'] = array(
             'select' => $_POST['select'],
@@ -67,7 +71,8 @@
         'by-nc' => l10n('CC BY-NC 4.0'),
         'by-nc-sa' => l10n('CC BY-NC-SA 4.0'),
         'by-nc-nd' => l10n('CC BY-NC-ND 4.0'),
-        'custom' => l10n('Custom'),
+        'custom' => l10n('Custom license'),
+        'no-license' => l10n('No license'),
     );
 
     // send config to template

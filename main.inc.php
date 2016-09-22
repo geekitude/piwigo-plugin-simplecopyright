@@ -1,6 +1,6 @@
 <?php
 /*
-Version: 1.02
+Version: 2.00
 Plugin Name: Simple Copyright
 Plugin URI: http://piwigo.org/ext/extension_view.php?eid=839
 Author: Geekitude
@@ -75,21 +75,33 @@ Description: Affichage d'un copyright de base en respectant le champs IPTC corre
             $simplecr_label = $simplecr['customlabel'];
             $simplecr_url = $simplecr['customurl'];
             $simplecr_descr = $simplecr['customdescr'];
+        } elseif ($simplecr['select'] == "no-license") {
+            $simplecr_label = "All Rights Reserved";
+            $simplecr_url = "https://en.wikipedia.org/wiki/All_rights_reserved";
+            $simplecr_descr = "You have no right to reuse this material in any way. Note that \"All Rights Reserved\" formula does not have any legal value left in any juridiction but is used here to prevent ambiguity.";
         }
     }
 
     function simplecr_footer() {
-        global $page, $template, $simplecr, $simplecr_label, $simplecr_url;
+        global $page, $template, $simplecr, $simplecr_label, $simplecr_url, $lang;
 
         if (($simplecr['enablefootercr'] == 1) and (script_basename() != 'admin') and ($page['body_id'] != 'thePopuphelpPage')) {
             // load plugin language file
             load_language('plugin.lang', SIMPLECR_PATH);
 
-            $copyright_link = '<a href='.$simplecr_url.' title="See licence">'.$simplecr_label.'</a>';
+            if (isset($lang[$simplecr_label])) {
+                $copyright_link = '<a href='.$simplecr_url.' target="_blank" title="See licence">'.$lang[$simplecr_label].'</a>';
+            } else {
+                $copyright_link = '<a href='.$simplecr_url.' target="_blank" title="See licence">'.$simplecr_label.'</a>';
+            }
         
             // send values to template
             $template->assign('simplecrfooter', $copyright_link);
-            $template->set_filename('simplecrfooter', realpath(SIMPLECR_PATH.'footer.tpl'));	
+            if ($simplecr['select'] == "no-license") {
+                $template->set_filename('simplecrfooter', realpath(SIMPLECR_PATH.'footer_no-license.tpl'));
+            } else {
+                $template->set_filename('simplecrfooter', realpath(SIMPLECR_PATH.'footer.tpl'));
+            }
             $template->append('footer_elements', $template->parse('simplecrfooter', true));
         }
     }

@@ -5,9 +5,9 @@ class SimpleCopyright_maintain extends PluginMaintain {
     private $default_conf = array(
         'select' => 'by-nc-nd',
         'enablefootercr' => true,
-        'customlabel' => 'Custom copyright label',
+        'customlabel' => 'Custom license label',
         'customurl' => 'http://custom.sample/full_text',
-        'customdescr' => 'Custom copyright short description',
+        'customdescr' => 'Custom license short description',
         'label' => "CC Attribution-NonCommercial-NoDerivatives 4.0 International",
         'url' => "https://creativecommons.org/licenses/by-nc-nd/4.0/",
         'descr' => "You are free to share (copy and redistribute the material in any medium or format) for any non-commercial purpose but must give appropriate credit. If you remix, transform, or build upon the material, you may not distribute the modified material.",

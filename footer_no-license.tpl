@@ -1,0 +1,3 @@
+<span id="simplecrfooter">
+ - {'Except where otherwise noted, there is no license granted on this website\'s content, wich means it is protected by corresponding copyright'|@translate} ({$simplecrfooter}).
+</span>

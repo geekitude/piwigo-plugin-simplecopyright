@@ -19,6 +19,8 @@
             $summary = "You are free to share (copy and redistribute the material in any medium or format) for any non-commercial purpose but must give appropriate credit. If you remix, transform, or build upon the material, you may not distribute the modified material.";
         } else if ($selected === "custom") {
             $summary = "{'see below'|@translate}";
+        } else if ($selected === "no-license") {
+            $summary = "You have no right to reuse this material in any way. Note that \"All Rights Reserved\" formula does not have any legal value left in any juridiction but is used here to prevent ambiguity.";
         }
         $('#simplecr_descr').text($summary);
     }
@@ -32,7 +34,7 @@
 <!-- Show settings in a nice box -->
 <form method="post" action="" class="properties">
     <fieldset>
-        <legend>{'Default copyright'|@translate}</legend>
+        <legend>{'Default license'|@translate}</legend>
         <ul>
             <li>
                 <label>
@@ -46,39 +48,39 @@
             <li>
                 <label>
                     <input type="checkbox" name="enablefootercr" value="1" {if $simplecr.enablefootercr}checked="checked"{/if}>
-                    <b>{'Show default copyright in site footer'|@translate}</b>
+                    <b>{'Display default license in site footer'|@translate}</b>
                 </label>
             </li>
         </ul>
     </fieldset>
     <fieldset>
-        <legend>{'Custom copyright'|@translate}</legend>
+        <legend>{'Custom license'|@translate}</legend>
         <ul>
             <li>
                 <label>
                     <b>{'Label:'|@translate}</b>
                     <input type='text' name='customlabel' id='customlabel' value='{$simplecr.customlabel|escape}' />
                 </label>
-                <a class="icon-info-circled-1 showInfo" title="{'Custom copyright label shown by Piwigo'|@translate}"></a>
+                <a class="icon-info-circled-1 showInfo" title="{'Custom license label shown by Piwigo'|@translate}"></a>
             </li>
             <li>
                 <label>
                     <b>{'URL:'|@translate}</b>
                     <input type='text' name='customurl' id='customurl' value='{$simplecr.customurl|escape}' />
                 </label>
-                <a class="icon-info-circled-1 showInfo" title="{'Any copyright requires a link to a full description to be of any value'|@translate}"></a>
+                <a class="icon-info-circled-1 showInfo" title="{'Any license requires a link to a full description to be of any value'|@translate}"></a>
             </li>
             <li>		
                 <label>		
                     <b>{'Short description:'|@translate}</b>		
                     <input type='text' name='customdescr' id='customdescr' value='{$simplecr.customdescr|escape}' />		
                 </label>		
-                <a class="icon-info-circled-1 showInfo" title="{'Will be shown as a tooltip when hovering copyright link'|@translate}"></a>		
+                <a class="icon-info-circled-1 showInfo" title="{'Will be shown as a tooltip when hovering license link'|@translate}"></a>		
             </li>
          </ul>
     </fieldset>
 
-    <p><img src="plugins/SimpleCopyright/images/important.png" alt="*IMPORTANT*" height="48" width="48" align="middle" style="margin-right: 5px;"><i>{"Note that displaying a copyright on a web page isn't as efficient as adding it in picture's metadatas."|@translate}</i></p>
+    <p><img src="plugins/SimpleCopyright/images/important.png" alt="*IMPORTANT*" height="48" width="48" align="middle" style="margin-right: 5px;"><i>{"Note that displaying a copyright and/or a license on a web page isn't as efficient as adding them in picture's metadatas, it only makes them more visible."|@translate}</i></p>
 
     <p class="formButtons"><input type="submit" name="save_config" value="{'Save Settings'|@translate}"></p>
 
