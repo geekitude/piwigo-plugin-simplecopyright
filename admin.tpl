@@ -79,24 +79,8 @@
             </li>
          </ul>
     </fieldset>
-    <fieldset>
-        <legend>{'About copyright notice'|@translate}</legend>
-        {"Elements legally required to correctly present a Copyright:"|@translate}<br/>
-        <ul>
-            <li style="margin: 0;">
-                1- {"the © symbol (C letter in a circle), the word “Copyright”, or, the abbreviation “Copr.”"|@translate}
-            </li>
-            <li style="margin: 0;">
-                2- {"the year of first publication"|@translate}
-            </li>
-            <li style="margin: 0;">
-                3- {"the name of the copyright owner, an abbreviation by which the name can be recognized, or a notoriously known alternative designation of owner"|@translate}
-            <li>
-        </ul>
-        <i>{"Excerpt from"|@translate} <a href="https://en.wikipedia.org/wiki/Copyright_notice#Form_of_notice_for_visually_perceptible_copies" target="_blank" title="Wikipedia">{"this Wikipedia article"|@translate}</a>.</i>
-    </fieldset>
 
-    <p><img src="plugins/SimpleCopyright/images/important.png" alt="*IMPORTANT*" height="48" width="48" align="middle" style="margin-right: 5px;"><i>{"Note that displaying a copyright and/or a license on a web page isn't as legally efficient as adding them in picture's metadatas, it only makes them more visible."|@translate}</i></p>
+    <p><img src="plugins/SimpleCopyright/images/important.png" alt="*IMPORTANT*" height="48" width="48" align="middle" style="margin-right: 5px;"><i>{"Note that displaying a copyright and/or a license on a web page isn't as efficient as adding them in picture's metadatas, it only makes them more visible."|@translate}</i></p>
 
     <p class="formButtons"><input type="submit" name="save_config" value="{'Save Settings'|@translate}"></p>
 
