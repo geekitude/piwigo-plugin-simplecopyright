@@ -11,6 +11,9 @@ class SimpleCopyright_maintain extends PluginMaintain {
         'label' => "All Rights Reserved",
         'url' => "https://en.wikipedia.org/wiki/All_rights_reserved",
         'descr' => "There is no license granting you with any right to reuse any material from this website in any way, refer to copyrights. Note that 'All Rights Reserved' formula does not have any legal value left in any juridiction but is used here to prevent ambiguity.",
+        'enableimagecr' => true,
+        'license2link' => true,
+        'shitch2license' => true,
     );
 
     function install($plugin_version, &$errors=array()) {
@@ -21,15 +24,15 @@ class SimpleCopyright_maintain extends PluginMaintain {
         }
     }
 
-    function activate($plugin_version, &$errors=array()) {
-        global $conf;
-
-        if (empty($conf['SimpleCopyright'])) {
-            conf_update_param('SimpleCopyright', $this->default_conf, true);
-        }
-    }
+//    function activate($plugin_version, &$errors=array()) {
+//        global $conf;
+//        if (empty($conf['SimpleCopyright'])) {
+//            conf_update_param('SimpleCopyright', $this->default_conf, true);
+//        }
+//    }
 
     function update($old_version, $new_version, &$errors=array()) {
+        //global $conf;
         $this->install($new_version, $errors);
     }
 

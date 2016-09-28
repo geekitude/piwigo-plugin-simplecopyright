@@ -80,11 +80,34 @@
          </ul>
     </fieldset>
     <fieldset>
+        <legend>{'Image pages'|@translate}</legend>
+        <ul>
+            <li>
+                <label>
+                    <input type="checkbox" name="enableimagecr" value="1" {if ($simplecr.enableimagecr)}checked="checked"{/if}>
+                    <b>{'Display image page Copyright section'|@translate}</b>.
+                </label>
+            </li>
+            <li>
+                <label>
+                    <input type="checkbox" name="license2link" value="1" {if ($simplecr.license2link)}checked="checked"{/if}>
+                    <b>{'Turn recognizable license label in Copyright metadata into a link to that license details'|@translate}</b>. {'Examples of recognizable license labels:'|@translate} <i>CC BY 4.0</i>, <i>CC Attribution 4.0 International</i>, <i>CC Attribution 4.0</i>, <i>CC BY-SA 4.0</i>, <i>CC Attribution-ShareAlike 4.0 International</i>, <i>CC Attribution-ShareAlike 4.0</i>, <i>All Rights Reserved</i>, ...
+                </label>
+            </li>
+            <li>
+                <label>
+                    <input type="checkbox" name="switch2license" value="1" {if ($simplecr.switch2license)}checked="checked"{/if}>
+                    <b>{'If image has no Copyright info, display a License section instead (with a link to default license)'|@translate}</b>.
+                </label>
+            </li>
+        </ul>
+    </fieldset>
+    <fieldset>
         <legend>{'About copyright notice'|@translate}</legend>
-        {"Elements legally required to correctly present a Copyright:"|@translate}<br/>
+        {"Elements legally required to correctly present a Copyright in most countries:"|@translate}<br/>
         <ul>
             <li style="margin: 0;">
-                1- {"the © symbol (C letter in a circle), the word “Copyright”, or, the abbreviation “Copr.”"|@translate}
+                1- {"the © symbol (C letter in a circle), the word “Copyright”, or the abbreviation “Copr.”"|@translate}<a class="icon-info-circled-1 showInfo" title="{'Note that the abbreviation might not be acceptable in some countries'|@translate}"></a>
             </li>
             <li style="margin: 0;">
                 2- {"the year of first publication"|@translate}
@@ -94,6 +117,7 @@
             <li>
         </ul>
         <i>{"Excerpt from"|@translate} <a href="https://en.wikipedia.org/wiki/Copyright_notice#Form_of_notice_for_visually_perceptible_copies" target="_blank" title="Wikipedia">{"this Wikipedia article"|@translate}</a>.</i>
+        <div style="margin-top: 15px;">{"It is possible and often advised (or even required in some countries) to add the licence after the Copyright, here come a few examples:"|@translate} <i>@2008 John SNOW (All Rights Reserved)</i>, <i>@2008 John SNOW - CC Attribution-NoDerivatives 4.0 International</i>, ...</div>
     </fieldset>
 
     <p><img src="plugins/SimpleCopyright/images/important.png" alt="*IMPORTANT*" height="48" width="48" align="middle" style="margin-right: 5px;"><i>{"Note that displaying a copyright and/or a license on a web page isn't as legally efficient as adding them in picture's metadatas, it only makes them more visible."|@translate}</i></p>

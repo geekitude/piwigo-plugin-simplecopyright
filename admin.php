@@ -49,6 +49,9 @@
             'label' => $simplecr_label,
             'url' => $simplecr_url,
             'descr' => $simplecr_descr,
+            'enableimagecr' => isset($_POST['enableimagecr']),
+            'license2link' => isset($_POST['license2link']),
+            'switch2license' => isset($_POST['switch2license']),
         );
         conf_update_param('SimpleCopyright', $conf['SimpleCopyright']);
     }
@@ -76,6 +79,11 @@
     );
 
     // send config to template
+    //$template->assign(array(
+    //    'simplecr' => safe_unserialize($conf['SimpleCopyright']),
+    //    'simplecr_descr' => $simplecr_descr,
+    //    'select_options' => $select_options
+    //));
     $template->assign(array(
         'simplecr' => safe_unserialize($conf['SimpleCopyright']),
         'simplecr_descr' => $simplecr_descr,
