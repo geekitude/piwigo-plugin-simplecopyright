@@ -16,7 +16,7 @@
     $lang['If image has no Copyright info, display a License section instead (with a link to default license)'] = 'Si l\'image ne contient pas de mention de Droits d\'Auteur, afficher plutôt une section Licence (avec un lien vers la licence par défaut)';
     $lang['About copyright notice'] = 'À propos de la présentation des droits d\'auteur';
     $lang['Elements legally required to correctly present a Copyright in most countries:'] = 'Éléments légalement requis pour présenter correctement des Droits d\'Auteur dans la majorité des pays :';
-    $lang['the © symbol (C letter in a circle), the word “Copyright”, or, the abbreviation “Copr.”'] = 'le symbole © (lettre C dans un cercle), le mot “Copyright”, ou, l\'abbréviation “Copr.”';
+    $lang['the © symbol (C letter in a circle), the word “Copyright”, or the abbreviation “Copr.”'] = 'le symbole © (lettre C dans un cercle), le mot “Copyright”, ou, l\'abbréviation “Copr.”';
     $lang['Note that the abbreviation might not be acceptable in some countries'] = 'Notez que l\'abbréviation n\'est pas jugée acceptable dans certains pays';
     $lang['the year of first publication'] = 'l\'année de première publication';
     $lang['the name of the copyright owner, an abbreviation by which the name can be recognized, or a notoriously known alternative designation of owner'] = 'le nom du propriétaire des droits d\'auteur, une abbréviation par laquelle le nom peut être reconnu, ou une désignation alternative notoire du propriétaire';
