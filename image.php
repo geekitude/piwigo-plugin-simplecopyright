@@ -1,5 +1,5 @@
 <?php
-// Change the variables used by the function that changes the template (uses default priority wich is 50)
+// Change the variables used by the function that changes the template (uses default priority which is 50)
 add_event_handler('loc_begin_picture', 'simplecr_add_image_vars_to_template');
 // Add an event handler for a prefilter (will occure after previous event hook since priority is higher)
 add_event_handler('loc_begin_picture', 'simplecr_set_prefilter_add_to_pic_info', 55 );

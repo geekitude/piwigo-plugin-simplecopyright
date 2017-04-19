@@ -26,7 +26,7 @@
     $lang['Note that displaying a copyright and/or a license on a web page isn\'t as legally efficient as adding them in picture\'s metadatas, it only makes them more visible.'] = 'Note that displaying a copyright and/or a license on a web page isn\'t as efficient as adding them in picture\'s metadatas, it only makes them more visible.';
 
     $lang['Except where otherwise noted, content on this website is licensed under the following license:'] = 'Except where otherwise noted, content on this website is licensed under the following license:';
-    $lang['Except where otherwise noted, there is no license granted on this website\'s content, wich means it is protected by corresponding copyright'] = 'Except where otherwise noted, there is no license granted on this website\'s content, wich means it is protected by corresponding copyright';
+    $lang['Except where otherwise noted, there is no license granted on this website\'s content, which means it is protected by corresponding copyright'] = 'Except where otherwise noted, there is no license granted on this website\'s content, which means it is protected by corresponding copyright';
     $lang['Label:'] = 'Label:';
     $lang['URL:'] = 'URL:';
     $lang['Short description:'] = 'Short description:';
