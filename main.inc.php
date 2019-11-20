@@ -84,7 +84,7 @@ Description: Affichage d'un copyright de base en respectant le champs IPTC corre
             $simplecr_url = "https://creativecommons.org/licenses/by/4.0/";
             $simplecr_descr = "You are free to share (copy and redistribute the material in any medium or format) or adapt (remix, transform, and build upon the material) for any purpose, even commercially but must give appropriate credit.";
         } elseif ($simplecr['select'] == "by-sa") {
-            $simplecr_label = l10n('label_by-sa'); 
+            $simplecr_label = l10n('label_by-sa');
             $simplecr_url = l10n('url_by-sa'); 
             $simplecr_descr = l10n('descr_by-sa');
         } elseif ($simplecr['select'] == "by-nd") {

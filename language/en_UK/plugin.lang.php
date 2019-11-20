@@ -34,4 +34,8 @@
     $lang['License'] = 'License';
     $lang['Image does not contain any Copyright, it would be wise to add one in metadata.'] = 'Image does not contain any Copyright, it would be wise to add one in metadata.';
     $lang['All Rights Reserved'] = 'All Rights Reserved';
+    
+    $lang['label_by-sa'] = 'CC Attribution-ShareAlike 4.0 International';
+    $lang['url_by-sa'] = 'https://creativecommons.org/licenses/by-sa/4.0/';
+    $lang['descr_by-sa'] = 'You are free to share (copy and redistribute the material in any medium or format) or adapt (remix, transform, and build upon the material) for any purpose, even commercially but must give appropriate credit. If you remix, transform, or build upon the material, you must distribute your contributions under the same license as the original.';
 ?>
