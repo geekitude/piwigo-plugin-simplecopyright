@@ -8,7 +8,7 @@
         if ($selected === "by") {
             $summary = "You are free to share (copy and redistribute the material in any medium or format) or adapt (remix, transform, and build upon the material) for any purpose, even commercially but must give appropriate credit.";
         } else if ($selected === "by-sa") {
-            $summary = "You are free to share (copy and redistribute the material in any medium or format) or adapt (remix, transform, and build upon the material) for any purpose, even commercially but must give appropriate credit. If you remix, transform, or build upon the material, you must distribute your contributions under the same license as the original.";
+            $summary = {'descr_by-sa'|@translate}
         } else if ($selected === "by-nd") {
             $summary = "You are free to share (copy and redistribute the material in any medium or format) for any purpose, even commercially. If you remix, transform, or build upon the material, you may not distribute the modified material.";
         } else if ($selected === "by-nc") {

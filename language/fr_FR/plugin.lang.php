@@ -34,4 +34,8 @@
     $lang['License'] = 'Licence';
     $lang['Image does not contain any Copyright, it would be wise to add one in metadata.'] = 'L\'image ne contient aucune mention de Droits d\'Auteur, il serait sage d\'en ajouter une aux métadonnées.';
     //$lang['All Rights Reserved'] = 'Tous Droits Réservés';
+    
+    $lang['label_by-sa'] = 'CC Attribution-Partage dans les mêmes conditions 4.0 International';
+    $lang['url_by-sa'] = 'https://creativecommons.org/licenses/by-sa/4.0/deed.fr';
+    $lang['descr_by-sa'] = 'Vous êtes autorisé à partager (copier, distribuer et communiquer le matériel par tous moyens et sous tous formats) ou adapter (remixer, transformer et créer à partir du matériel) pour toute utilisation, y compris commerciale, mais vous devez créditer l\'Œuvre. Dans le cas où vous effectuez un remix, que vous transformez, ou créez à partir du matériel composant l\'Œuvre originale, vous devez diffuser l\'Œuvre modifiée dans les même conditions, c\'est à dire avec la même licence avec laquelle l\'Œuvre originale a été diffusée.';
 ?>
