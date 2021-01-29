@@ -79,6 +79,9 @@ Description: Affichage d'un copyright de base en respectant le champs IPTC corre
         //// prepare plugin configuration
         //$simplecr = safe_unserialize($conf['SimpleCopyright']);
 
+        // load plugin language file
+        load_language('plugin.lang', SIMPLECR_PATH);
+
         if ($simplecr['select'] == "by") {
             $simplecr_label = "CC Attribution 4.0 International";
             $simplecr_url = "https://creativecommons.org/licenses/by/4.0/";
@@ -118,8 +121,6 @@ Description: Affichage d'un copyright de base en respectant le champs IPTC corre
         global $page, $template, $simplecr, $simplecr_label, $simplecr_url, $simplecr_descr, $lang;
 
         if (($simplecr['enablefootercr'] == 1) and (script_basename() != 'admin') and ($page['body_id'] != 'thePopuphelpPage')) {
-            // load plugin language file
-            load_language('plugin.lang', SIMPLECR_PATH);
 
             $copyright_link = '<a href='.$simplecr_url.' target="_blank" title="'.$simplecr_descr.'">'.$simplecr_label.'</a>';
         
