@@ -83,16 +83,26 @@ function simplecr_add_pic_copyright($content, &$smarty) {
 
 //https://creativecommons.org/licenses/by-nc-nd/4.0/
 	// Add the information after the author - so before the createdate
-	$search = '#class="imageInfoTable">#';
+	$search = array(
+        '#class="imageInfoTable">#', 
+        '#id="PictureInfo">#',
+    );
 
     // Replacement to add Simple Copyright default copyright...
-    $replacement = 'class="imageInfoTable">
+    $replacement = array(
+        'class="imageInfoTable">
     <div id="simplecr" class="imageInfo">
         <dt>{\'Copyright\'|@translate}</dt>
         <dd>
             {$MEDIA_CR}
         </dd>
-    </div>';
+    </div>',
+        'id="PictureInfo">
+    <li id="simplecr" class="imageInfo">
+        <dt>{\'Copyright\'|@translate}</dt>
+        <dd>{$MEDIA_CR}</dd>
+    </li>',
+    );
 	return preg_replace($search, $replacement, $content, 1);
 }
 
