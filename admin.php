@@ -15,6 +15,10 @@
             $simplecr_label = l10n('label_by-sa'); 
             $simplecr_url = l10n('url_by-sa'); 
             $simplecr_descr = l10n('descr_by-sa');
+        } elseif ($_POST['select'] == "by-nd") {
+            $simplecr_label = "CC Attribution-NoDerivatives 4.0 International";
+            $simplecr_url = "https://creativecommons.org/licenses/by-nd/4.0/";
+            $simplecr_descr = "You are free to share (copy and redistribute the material in any medium or format) for any purpose, even commercially. If you remix, transform, or build upon the material, you may not distribute the modified material.";
         } elseif ($_POST['select'] == "by-nc") {
             $simplecr_label = "CC Attribution-NonCommercial 4.0 International";
             $simplecr_url = "https://creativecommons.org/licenses/by-nc/4.0/";
