@@ -84,8 +84,9 @@ function simplecr_add_pic_copyright($content, &$smarty) {
 //https://creativecommons.org/licenses/by-nc-nd/4.0/
 	// Add the information after the author - so before the createdate
 	$search = array(
-        '#class="imageInfoTable">#', 
-        '#id="PictureInfo">#',
+        '#class="imageInfoTable">#', // default theme
+        '#id="PictureInfo">#', // smartpocket theme
+        '#id="info-content" class="d-flex flex-column">#', // bootstrap_darkroom theme
     );
 
     // Replacement to add Simple Copyright default copyright...
@@ -96,12 +97,21 @@ function simplecr_add_pic_copyright($content, &$smarty) {
         <dd>
             {$MEDIA_CR}
         </dd>
-    </div>',
+    </div>', // default theme
         'id="PictureInfo">
     <li id="simplecr" class="imageInfo">
         <dt>{\'Copyright\'|@translate}</dt>
         <dd>{$MEDIA_CR}</dd>
-    </li>',
+    </li>', // smartpocket theme
+        'id="info-content" class="d-flex flex-column">
+    <div id="simplecr" class="imageInfo">
+        <dl class="row mb-0">
+            <dt class="col-sm-5">{\'Copyright\'|@translate}</dt>
+            <dd class="col-sm-7">
+                {$MEDIA_CR}
+            </dd>
+        </dl>
+    </div>', // bootstrap_darkroom theme
     );
 	return preg_replace($search, $replacement, $content, 1);
 }
