@@ -23,33 +23,6 @@ Description: Affichage d'un copyright de base en respectant le champs IPTC corre
     add_event_handler('loc_end_page_tail', 'simplecr_footer', 40);
 
 
-//global $scrlicences;
-//$scrlicences['by']['label'] = "CC Attribution 4.0 International";
-//$scrlicences['by']['url'] = "https://creativecommons.org/licenses/by/4.0/";
-//$scrlicences['by']['descr'] = "You are free to share (copy and redistribute the material in any medium or format) or adapt (remix, transform, and build upon the material) for any purpose, even commercially but must give appropriate credit.";
-//$scrlicences['by-sa']['label'] = "CC Attribution-ShareAlike 4.0 International";
-//$scrlicences['by-sa']['url'] = "https://creativecommons.org/licenses/by-sa/4.0/";
-//$scrlicences['by-sa']['descr'] = "You are free to share (copy and redistribute the material in any medium or format) or adapt (remix, transform, and build upon the material) for any purpose, even commercially but must give appropriate credit. If you remix, transform, or build upon the material, you must distribute your contributions under the same license as the original.";
-//$scrlicences['by-nd']['label'] = "CC Attribution-NoDerivatives 4.0 International";
-//$scrlicences['by-nd']['url'] = "https://creativecommons.org/licenses/by-nd/4.0/";
-//$scrlicences['by-nd']['descr'] = "You are free to share (copy and redistribute the material in any medium or format) for any purpose, even commercially. If you remix, transform, or build upon the material, you may not distribute the modified material.";
-//$scrlicences['by-nc']['label'] = "CC Attribution-NonCommercial 4.0 International";
-//$scrlicences['by-nc']['url'] = "https://creativecommons.org/licenses/by-nc/4.0/";
-//$scrlicences['by-nc']['descr'] = "You are free to share (copy and redistribute the material in any medium or format) or adapt (remix, transform, and build upon the material) for any non-commercial purpose but must give appropriate credit.";
-//$scrlicences['by-nc-sa']['label'] = "CC Attribution-NonCommercial-ShareAlike 4.0 International";
-//$scrlicences['by-nc-sa']['url'] = "https://creativecommons.org/licenses/by-nc-sa/4.0/";
-//$scrlicences['by-nc-sa']['descr'] = "You are free to share (copy and redistribute the material in any medium or format) or adapt (remix, transform, and build upon the material) for any non-commercial purpose but must give appropriate credit. If you remix, transform, or build upon the material, you must distribute your contributions under the same license as the original.";
-//$scrlicences['by-nc-nd']['label'] = "CC Attribution-NonCommercial-NoDerivatives 4.0 International";
-//$scrlicences['by-nc-nd']['url'] = "https://creativecommons.org/licenses/by-nc-nd/4.0/";
-//$scrlicences['by-nc-nd']['descr'] = "You are free to share (copy and redistribute the material in any medium or format) for any non-commercial purpose but must give appropriate credit. If you remix, transform, or build upon the material, you may not distribute the modified material.";
-//$scrlicences['custom']['label'] = $simplecr['customlabel'];
-//$scrlicences['custom']['url'] = $simplecr['customurl'];
-//$scrlicences['custom']['descr'] = $simplecr['customdescr'];
-//$scrlicences['no-license']['label'] = "All Rights Reserved";
-//$scrlicences['no-license']['url'] = "https://en.wikipedia.org/wiki/All_rights_reserved";
-//$scrlicences['no-license']['descr'] = "There is no license granting you with any right to reuse any material from this website in any way, refer to copyrights. Note that 'All Rights Reserved' formula does not have any legal value left in any juridiction but is used here to prevent ambiguity.";
-
-
 /* +-----------------------------------------------------------------------+
  * | Admin Page                                                            |
  * +-----------------------------------------------------------------------+ */
@@ -82,19 +55,18 @@ Description: Affichage d'un copyright de base en respectant le champs IPTC corre
         // load plugin language file
         load_language('plugin.lang', SIMPLECR_PATH);
         switch ( $simplecr['select'] ) {
+        case 'custom' :
+            $simplecr_label = $simplecr['customlabel'];
+            $simplecr_url   = $simplecr['customurl'];
+            $simplecr_descr = $simplecr['customdescr'];
+            break ;
         case 'by' :
         case 'by-sa' :
         case 'by-nd' :
         case 'by-nc' :
         case 'by-nc-sa' :
         case 'by-nc-nd' :
-        case 'custom' :
-            $simplecr_label = $simplecr['customlabel'];
-            $simplecr_url = $simplecr['customurl'];
-            $simplecr_descr = $simplecr['customdescr'];
-            break ;
         case 'no-license' :
-        default :
             $simplecr_label = l10n('label_'.$simplecr['select']) ;
             $simplecr_url   = l10n('url_'  .$simplecr['select']) ; 
             $simplecr_descr = l10n('descr_'.$simplecr['select']) ;
