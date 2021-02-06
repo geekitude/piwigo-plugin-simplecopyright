@@ -81,39 +81,24 @@ Description: Affichage d'un copyright de base en respectant le champs IPTC corre
 
         // load plugin language file
         load_language('plugin.lang', SIMPLECR_PATH);
-
-        if ($simplecr['select'] == "by") {
-            $simplecr_label = "CC Attribution 4.0 International";
-            $simplecr_url = "https://creativecommons.org/licenses/by/4.0/";
-            $simplecr_descr = "You are free to share (copy and redistribute the material in any medium or format) or adapt (remix, transform, and build upon the material) for any purpose, even commercially but must give appropriate credit.";
-        } elseif ($simplecr['select'] == "by-sa") {
-            $simplecr_label = l10n('label_by-sa');
-            $simplecr_url = l10n('url_by-sa'); 
-            $simplecr_descr = l10n('descr_by-sa');
-        } elseif ($simplecr['select'] == "by-nd") {
-            $simplecr_label = "CC Attribution-NoDerivatives 4.0 International";
-            $simplecr_url = "https://creativecommons.org/licenses/by-nd/4.0/";
-            $simplecr_descr = "You are free to share (copy and redistribute the material in any medium or format) for any purpose, even commercially. If you remix, transform, or build upon the material, you may not distribute the modified material.";
-        } elseif ($simplecr['select'] == "by-nc") {
-            $simplecr_label = "CC Attribution-NonCommercial 4.0 International";
-            $simplecr_url = "https://creativecommons.org/licenses/by-nc/4.0/";
-            $simplecr_descr = "You are free to share (copy and redistribute the material in any medium or format) or adapt (remix, transform, and build upon the material) for any non-commercial purpose but must give appropriate credit.";
-        } elseif ($simplecr['select'] == "by-nc-sa") {
-            $simplecr_label = "CC Attribution-NonCommercial-ShareAlike 4.0 International";
-            $simplecr_url = "https://creativecommons.org/licenses/by-nc-sa/4.0/";
-            $simplecr_descr = "You are free to share (copy and redistribute the material in any medium or format) or adapt (remix, transform, and build upon the material) for any non-commercial purpose but must give appropriate credit. If you remix, transform, or build upon the material, you must distribute your contributions under the same license as the original.";
-        } elseif ($simplecr['select'] == "by-nc-nd") {
-            $simplecr_label = "CC Attribution-NonCommercial-NoDerivatives 4.0 International";
-            $simplecr_url = "https://creativecommons.org/licenses/by-nc-nd/4.0/";
-            $simplecr_descr = "You are free to share (copy and redistribute the material in any medium or format) for any non-commercial purpose but must give appropriate credit. If you remix, transform, or build upon the material, you may not distribute the modified material.";
-        } elseif ($simplecr['select'] == "custom") {
+        switch ( $simplecr['select'] ) {
+        case 'by' :
+        case 'by-sa' :
+        case 'by-nd' :
+        case 'by-nc' :
+        case 'by-nc-sa' :
+        case 'by-nc-nd' :
+        case 'custom' :
             $simplecr_label = $simplecr['customlabel'];
             $simplecr_url = $simplecr['customurl'];
             $simplecr_descr = $simplecr['customdescr'];
-        } elseif ($simplecr['select'] == "no-license") {
-            $simplecr_label = "All Rights Reserved";
-            $simplecr_url = "https://en.wikipedia.org/wiki/All_rights_reserved";
-            $simplecr_descr = "There is no license granting you with any right to reuse any material from this website in any way, refer to copyrights. Note that 'All Rights Reserved' formula does not have any legal value left in any juridiction but is used here to prevent ambiguity.";
+            break ;
+        case 'no-license' :
+        default :
+            $simplecr_label = l10n('label_'.$simplecr['select']) ;
+            $simplecr_url   = l10n('url_'  .$simplecr['select']) ; 
+            $simplecr_descr = l10n('descr_'.$simplecr['select']) ;
+            break ;
         }
     }
 

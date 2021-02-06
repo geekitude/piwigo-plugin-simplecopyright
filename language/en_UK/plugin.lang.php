@@ -35,7 +35,31 @@
     $lang['Image does not contain any Copyright, it would be wise to add one in metadata.'] = 'Image does not contain any Copyright, it would be wise to add one in metadata.';
     $lang['All Rights Reserved'] = 'All Rights Reserved';
     
+    $lang['label_by']         = 'CC Attribution 4.0 International';
+    $lang['url_by']           = 'https://creativecommons.org/licenses/by/4.0/';
+    $lang['descr_by']         = 'You are free to share (copy and redistribute the material in any medium or format) or adapt (remix, transform, and build upon the material) for any purpose, even commercially but must give appropriate credit.';
+    
     $lang['label_by-sa'] = 'CC Attribution-ShareAlike 4.0 International';
     $lang['url_by-sa'] = 'https://creativecommons.org/licenses/by-sa/4.0/';
     $lang['descr_by-sa'] = 'You are free to share (copy and redistribute the material in any medium or format) or adapt (remix, transform, and build upon the material) for any purpose, even commercially but must give appropriate credit. If you remix, transform, or build upon the material, you must distribute your contributions under the same license as the original.';
+    
+    $lang['label_by-nd']         = 'CC Attribution-NoDerivatives 4.0 International';
+    $lang['url_by-nd']           = 'https://creativecommons.org/licenses/by-nd/4.0/';
+    $lang['descr_by-nd']         = 'You are free to share (copy and redistribute the material in any medium or format) for any purpose, even commercially. If you remix, transform, or build upon the material, you may not distribute the modified material.';
+    
+    $lang['label_by-nc']      = 'CC Attribution-NonCommercial 4.0 International';
+    $lang['url_by-nc']        = 'https://creativecommons.org/licenses/by-nc/4.0/';
+    $lang['descr_by-nc']      = 'You are free to share (copy and redistribute the material in any medium or format) or adapt (remix, transform, and build upon the material) for any non-commercial purpose but must give appropriate credit.';
+    
+    $lang['label_by-nc-sa']   = 'CC Attribution-NonCommercial-ShareAlike 4.0 International';
+    $lang['url_by-nc-sa']     = 'https://creativecommons.org/licenses/by-nc-sa/4.0/';
+    $lang['descr_by-nc-sa']   = 'You are free to share (copy and redistribute the material in any medium or format) or adapt (remix, transform, and build upon the material) for any non-commercial purpose but must give appropriate credit. If you remix, transform, or build upon the material, you must distribute your contributions under the same license as the original.';
+    
+    $lang['label_by-nc-nd']   = 'CC Attribution-NonCommercial-NoDerivatives 4.0 International';
+    $lang['url_by-nc-nd']     = 'https://creativecommons.org/licenses/by-nc-nd/4.0/';
+    $lang['descr_by-nc-nd']   = 'You are free to share (copy and redistribute the material in any medium or format) for any non-commercial purpose but must give appropriate credit. If you remix, transform, or build upon the material, you may not distribute the modified material.';
+    
+    $lang['label_no-license'] = 'All Rights Reserved';
+    $lang['url_no-license']   = 'https://en.wikipedia.org/wiki/All_rights_reserved';
+    $lang['descr_no-license'] = 'There is no license granting you with any right to reuse any material from this website in any way, refer to copyrights. Note that “All Rights Reserved” formula does not have any legal value left in any juridiction but is used here to prevent ambiguity.';
 ?>
