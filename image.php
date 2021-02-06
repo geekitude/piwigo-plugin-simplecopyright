@@ -46,9 +46,9 @@ function simplecr_add_image_vars_to_template() {
 		// Sending data to the template
         $template->assign(
             array	(
-                'SIMPLECR_LABEL' => $simplecr['label'],
-                'SIMPLECR_URL' => $simplecr['url'],
-                'SIMPLECR_DESCR' => $simplecr['descr'],
+                'SIMPLECR_LABEL' => $simplecr_label,
+                'SIMPLECR_URL' => $simplecr_url,
+                'SIMPLECR_DESCR' => $simplecr_descr,
                 'MEDIA_CR' => $mediacr
             )
         );
@@ -91,18 +91,21 @@ function simplecr_add_pic_copyright($content, &$smarty) {
 
     // Replacement to add Simple Copyright default copyright...
     $replacement = array(
+        // default theme
         'class="imageInfoTable">
     <div id="simplecr" class="imageInfo">
         <dt>{\'Copyright\'|@translate}</dt>
         <dd>
             {$MEDIA_CR}
         </dd>
-    </div>', // default theme
+    </div>',
+        // smartpocket theme
         'id="PictureInfo">
     <li id="simplecr" class="imageInfo">
         <dt>{\'Copyright\'|@translate}</dt>
         <dd>{$MEDIA_CR}</dd>
-    </li>', // smartpocket theme
+    </li>',
+        // bootstrap_darkroom theme
         'id="info-content" class="d-flex flex-column">
     <div id="simplecr" class="imageInfo">
         <dl class="row mb-0">
@@ -111,7 +114,7 @@ function simplecr_add_pic_copyright($content, &$smarty) {
                 {$MEDIA_CR}
             </dd>
         </dl>
-    </div>', // bootstrap_darkroom theme
+    </div>',
     );
 	return preg_replace($search, $replacement, $content, 1);
 }

@@ -5,6 +5,7 @@ Plugin Name: Simple Copyright
 Plugin URI: http://piwigo.org/ext/extension_view.php?eid=839
 Author: Geekitude
 Description: Affichage d'un copyright de base en respectant le champs IPTC correspondant s'il existe.
+Has Settings: true
 */
 
     // Check whether we are indeed included by Piwigo.
