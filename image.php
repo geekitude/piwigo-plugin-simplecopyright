@@ -67,7 +67,8 @@ function simplecr_set_prefilter_add_to_pic_info() {
     if ((isset($simplecr['enableimagecr'])) and ($simplecr['enableimagecr'] == true)) {
         if ($mediacr != null) {
             $template->set_prefilter('picture', 'simplecr_add_pic_copyright');
-        } elseif (($mediacr == NULL) and ((isset($simplecr['switch2license'])) and ($simplecr['switch2license'] == true))) {
+        } 
+        elseif (($mediacr == NULL) and ((isset($simplecr['switch2license'])) and ($simplecr['switch2license'] == true))) {
             $template->set_prefilter('picture', 'simplecr_add_pic_license');
         }
     }

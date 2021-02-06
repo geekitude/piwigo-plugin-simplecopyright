@@ -86,7 +86,8 @@ Has Settings: true
             $template->assign('simplecrfooter', $copyright_link);
             if ($simplecr['select'] == "no-license") {
                 $template->set_filename('simplecrfooter', realpath(SIMPLECR_PATH.'footer_no-license.tpl'));
-            } else {
+            } 
+            else {
                 $template->set_filename('simplecrfooter', realpath(SIMPLECR_PATH.'footer.tpl'));
             }
             $template->append('footer_elements', $template->parse('simplecrfooter', true));
