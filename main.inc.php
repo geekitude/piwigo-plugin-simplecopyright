@@ -10,7 +10,7 @@ Has Settings: true
 
     // Check whether we are indeed included by Piwigo.
     if (!defined('PHPWG_ROOT_PATH')) die('Hacking attempt!');
-    global $conf, $simplecr;
+    global $conf, $simplecr ;
 
     // prepare plugin configuration
     $simplecr = safe_unserialize($conf['SimpleCopyright']);

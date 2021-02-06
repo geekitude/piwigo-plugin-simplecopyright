@@ -1,4 +1,5 @@
 <?php
+    
 // Change the variables used by the function that changes the template (uses default priority which is 50)
 add_event_handler('loc_begin_picture', 'simplecr_add_image_vars_to_template');
 // Add an event handler for a prefilter (will occure after previous event hook since priority is higher)
@@ -6,8 +7,8 @@ add_event_handler('loc_begin_picture', 'simplecr_set_prefilter_add_to_pic_info',
 
 // Assign values to the variables in the template
 function simplecr_add_image_vars_to_template() {
-	//global $page, $template, $conf, $mediacr, $currimglicense;
-	global $page, $template, $simplecr, $mediacr, $currimglicense;
+	//global $page, $template, $conf, $mediacr ;
+	global $page, $template, $simplecr, $simplecr_label, $simplecr_url, $simplecr_descr, $mediacr ;
 
     // Load plugin language file
     load_language('plugin.lang', SIMPLECR_PATH);
