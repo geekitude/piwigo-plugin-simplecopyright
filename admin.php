@@ -7,52 +7,37 @@
 
     // save config
     if (isset($_POST['save_config'])) {
-        if ($_POST['select'] == "by") {
-            $simplecr_label = "CC Attribution 4.0 International";
-            $simplecr_url = "https://creativecommons.org/licenses/by/4.0/";
-            $simplecr_descr = "You are free to share (copy and redistribute the material in any medium or format) or adapt (remix, transform, and build upon the material) for any purpose, even commercially but must give appropriate credit.";
-        } elseif ($_POST['select'] == "by-sa") {
-            $simplecr_label = l10n('label_by-sa'); 
-            $simplecr_url = l10n('url_by-sa'); 
-            $simplecr_descr = l10n('descr_by-sa');
-        } elseif ($_POST['select'] == "by-nd") {
-            $simplecr_label = "CC Attribution-NoDerivatives 4.0 International";
-            $simplecr_url = "https://creativecommons.org/licenses/by-nd/4.0/";
-            $simplecr_descr = "You are free to share (copy and redistribute the material in any medium or format) for any purpose, even commercially. If you remix, transform, or build upon the material, you may not distribute the modified material.";
-        } elseif ($_POST['select'] == "by-nc") {
-            $simplecr_label = "CC Attribution-NonCommercial 4.0 International";
-            $simplecr_url = "https://creativecommons.org/licenses/by-nc/4.0/";
-            $simplecr_descr = "You are free to share (copy and redistribute the material in any medium or format) or adapt (remix, transform, and build upon the material) for any non-commercial purpose but must give appropriate credit.";
-        } elseif ($_POST['select'] == "by-nc-sa") {
-            $simplecr_label = "CC Attribution-NonCommercial-ShareAlike 4.0 International";
-            $simplecr_url = "https://creativecommons.org/licenses/by-nc-sa/4.0/";
-            $simplecr_descr = "You are free to share (copy and redistribute the material in any medium or format) or adapt (remix, transform, and build upon the material) for any non-commercial purpose but must give appropriate credit. If you remix, transform, or build upon the material, you must distribute your contributions under the same license as the original.";
-        } elseif ($_POST['select'] == "by-nc-nd") {
-            $simplecr_label = "CC Attribution-NonCommercial-NoDerivatives 4.0 International";
-            $simplecr_url = "https://creativecommons.org/licenses/by-nc-nd/4.0/";
-            $simplecr_descr = "You are free to share (copy and redistribute the material in any medium or format) for any non-commercial purpose but must give appropriate credit. If you remix, transform, or build upon the material, you may not distribute the modified material.";
-        } elseif ($_POST['select'] == "custom") {
+    
+        switch ( $_POST['select'] ) {
+        case 'custom' :
             $simplecr_label = $_POST['customlabel'];
             $simplecr_url = $_POST['customurl'];
             $simplecr_descr = $_POST['customdescr'];
-        } elseif ($_POST['select'] == "no-license") {
-            $simplecr_label = "All Rights Reserved";
-            $simplecr_url = "https://en.wikipedia.org/wiki/All_rights_reserved";
-            $simplecr_descr = "There is no license granting you with any right to reuse any material from this website in any way, refer to copyrights. Note that 'All Rights Reserved' formula does not have any legal value left in any juridiction but is used here to prevent ambiguity.";
+            break ;
+        case 'by' :
+        case 'by-sa' :
+        case 'by-nd' :
+        case 'by-nc' :
+        case 'by-nc-sa' :
+        case 'by-nc-nd' :
+        case 'no-license' :
+            $simplecr_label = l10n('label_'.$simplecr['select']) ;
+            $simplecr_url   = l10n('url_'  .$simplecr['select']) ; 
+            $simplecr_descr = l10n('descr_'.$simplecr['select']) ;
+            break ;
         }
+        
         $conf['SimpleCopyright'] = array(
             'select' => $_POST['select'],
             'enablefootercr' => isset($_POST['enablefootercr']),
             'customlabel' => $_POST['customlabel'],
             'customurl' => $_POST['customurl'],
             'customdescr' => $_POST['customdescr'],
-            'label' => $simplecr_label,
-            'url' => $simplecr_url,
-            'descr' => $simplecr_descr,
             'enableimagecr' => isset($_POST['enableimagecr']),
             'license2link' => isset($_POST['license2link']),
             'switch2license' => isset($_POST['switch2license']),
         );
+        
         conf_update_param('SimpleCopyright', $conf['SimpleCopyright']);
     }
 

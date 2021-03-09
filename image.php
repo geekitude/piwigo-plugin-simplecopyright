@@ -1,4 +1,5 @@
 <?php
+    
 // Change the variables used by the function that changes the template (uses default priority which is 50)
 add_event_handler('loc_begin_picture', 'simplecr_add_image_vars_to_template');
 // Add an event handler for a prefilter (will occure after previous event hook since priority is higher)
@@ -6,8 +7,8 @@ add_event_handler('loc_begin_picture', 'simplecr_set_prefilter_add_to_pic_info',
 
 // Assign values to the variables in the template
 function simplecr_add_image_vars_to_template() {
-	//global $page, $template, $conf, $mediacr, $currimglicense;
-	global $page, $template, $simplecr, $mediacr, $currimglicense;
+	//global $page, $template, $conf, $mediacr ;
+	global $page, $template, $simplecr, $simplecr_label, $simplecr_url, $simplecr_descr, $mediacr ;
 
     // Load plugin language file
     load_language('plugin.lang', SIMPLECR_PATH);
@@ -31,14 +32,14 @@ function simplecr_add_image_vars_to_template() {
     }
 
     if ($simplecr['license2link'] == true) {
-        $mediacr = str_replace(array("CC Attribution 4.0 International", "CC BY 4.0 International", "CC BY 4.0"), "<a target='_blank' href='https://creativecommons.org/licenses/by/4.0/' title='You are free to share (copy and redistribute the material in any medium or format) or adapt (remix, transform, and build upon the material) for any purpose, even commercially but must give appropriate credit.'>CC BY 4.0</a>", $mediacr);
+        $mediacr = str_replace(array('CC Attribution 4.0 International', 'CC BY 4.0 International', 'CC BY 4.0'), '<a target="_blank" href="'.l10n('url_by').'" title="'.l10n('descr_by').'">CC BY 4.0</a>', $mediacr);
         $mediacr = str_replace(array('CC Attribution-ShareAlike 4.0 International', 'CC BY-SA 4.0 International', 'CC BY-SA 4.0'), '<a target="_blank" href="'.l10n('url_by-sa').'" title="'.l10n('descr_by-sa').'">CC BY-SA 4.0</a>', $mediacr);
-        $mediacr = str_replace(array("CC Attribution-NoDerivatives 4.0 International", "CC BY-ND 4.0 International", "CC BY-ND 4.0"), "<a target='_blank' href='https://creativecommons.org/licenses/by-nd/4.0/' title='You are free to share (copy and redistribute the material in any medium or format) for any purpose, even commercially. If you remix, transform, or build upon the material, you may not distribute the modified material.'>CC BY-ND 4.0</a>", $mediacr);
-        $mediacr = str_replace(array("CC Attribution-NonCommercial 4.0 International", "CC BY-NC 4.0 International", "CC BY-NC 4.0"), "<a target='_blank' href='https://creativecommons.org/licenses/by-nc/4.0/' title='You are free to share (copy and redistribute the material in any medium or format) or adapt (remix, transform, and build upon the material) for any non-commercial purpose but must give appropriate credit.'>CC BY-NC 4.0</a>", $mediacr);
-        $mediacr = str_replace(array("CC Attribution-NonCommercial-ShareAlike 4.0 International", "CC BY-NC-SA 4.0 International", "CC BY-NC-SA 4.0"), "<a target='_blank' href='https://creativecommons.org/licenses/by-nc-sa/4.0/' title='You are free to share (copy and redistribute the material in any medium or format) or adapt (remix, transform, and build upon the material) for any non-commercial purpose but must give appropriate credit. If you remix, transform, or build upon the material, you must distribute your contributions under the same license as the original.'>CC BY-NC-SA 4.0</a>", $mediacr);
-        $mediacr = str_replace(array("CC Attribution-NonCommercial-NoDerivatives 4.0 International", "CC BY-NC-ND 4.0 International", "CC BY-NC-ND 4.0"), "<a target='_blank' href='https://creativecommons.org/licenses/by-nc-nd/4.0/' title='You are free to share (copy and redistribute the material in any medium or format) for any non-commercial purpose but must give appropriate credit. If you remix, transform, or build upon the material, you may not distribute the modified material.'>CC BY-NC-ND 4.0</a>", $mediacr);
-        $mediacr = str_replace($simplecr['customlabel'], "<a target='_blank' href='".$simplecr['customurl']."' title='".$simplecr['customdescr']."'>".$simplecr['customlabel']."</a>", $mediacr);
-        $mediacr = str_replace("All Rights Reserved", "<a target='_blank' href='https://en.wikipedia.org/wiki/All_rights_reserved' title='There is no license granting you with any right to reuse any material from this website in any way, refer to copyrights. Note that « All Rights Reserved » formula does not have any legal value left in any juridiction but is used here to prevent ambiguity.'>All Rights Reserved</a>", $mediacr);
+        $mediacr = str_replace(array('CC Attribution-NoDerivatives 4.0 International', 'CC BY-ND 4.0 International', 'CC BY-ND 4.0'), '<a target="_blank" href="'.l10n('url_by-nd').'" title="'.l10n('descr_by-nd').'">CC BY-ND 4.0</a>', $mediacr);
+        $mediacr = str_replace(array('CC Attribution-NonCommercial 4.0 International', 'CC BY-NC 4.0 International', 'CC BY-NC 4.0'), '<a target="_blank" href="'.l10n('url_by-nc').'" title="'.l10n('descr_by-nc').'">CC BY-NC 4.0</a>', $mediacr);
+        $mediacr = str_replace(array('CC Attribution-NonCommercial-ShareAlike 4.0 International', 'CC BY-NC-SA 4.0 International', 'CC BY-NC-SA 4.0'), '<a target="_blank" href="'.l10n('url_by-nc-sa').'" title="'.l10n('descr_by-nc-sa').'">CC BY-NC-SA 4.0</a>', $mediacr);
+        $mediacr = str_replace(array('CC Attribution-NonCommercial-NoDerivatives 4.0 International', 'CC BY-NC-ND 4.0 International', 'CC BY-NC-ND 4.0'), '<a target="_blank" href="'.l10n('url_by-nc-nd').'" title="'.l10n('descr_by-nc-nd').'">CC BY-NC-ND 4.0</a>', $mediacr);
+        $mediacr = str_replace($simplecr['customlabel'], '<a target="_blank" href="'.$simplecr['customurl'].'" title="'.$simplecr['customdescr'].'">'.$simplecr['customlabel'].'</a>', $mediacr);
+        $mediacr = str_replace(array('All Rights Reserved', 'Tous droits réservés',), '<a target="_blank" href="'.l10n('url_no-license').'" title="'.l10n('descr_no-license').'">'.l10n('label_no-license').'</a>', $mediacr);
     }
 
 	// Show block only on the picture page
@@ -46,9 +47,9 @@ function simplecr_add_image_vars_to_template() {
 		// Sending data to the template
         $template->assign(
             array	(
-                'SIMPLECR_LABEL' => $simplecr['label'],
-                'SIMPLECR_URL' => $simplecr['url'],
-                'SIMPLECR_DESCR' => $simplecr['descr'],
+                'SIMPLECR_LABEL' => $simplecr_label,
+                'SIMPLECR_URL' => $simplecr_url,
+                'SIMPLECR_DESCR' => $simplecr_descr,
                 'MEDIA_CR' => $mediacr
             )
         );
@@ -66,7 +67,8 @@ function simplecr_set_prefilter_add_to_pic_info() {
     if ((isset($simplecr['enableimagecr'])) and ($simplecr['enableimagecr'] == true)) {
         if ($mediacr != null) {
             $template->set_prefilter('picture', 'simplecr_add_pic_copyright');
-        } elseif (($mediacr == NULL) and ((isset($simplecr['switch2license'])) and ($simplecr['switch2license'] == true))) {
+        } 
+        elseif (($mediacr == NULL) and ((isset($simplecr['switch2license'])) and ($simplecr['switch2license'] == true))) {
             $template->set_prefilter('picture', 'simplecr_add_pic_license');
         }
     }
@@ -91,18 +93,21 @@ function simplecr_add_pic_copyright($content, &$smarty) {
 
     // Replacement to add Simple Copyright default copyright...
     $replacement = array(
+        // default theme
         'class="imageInfoTable">
     <div id="simplecr" class="imageInfo">
         <dt>{\'Copyright\'|@translate}</dt>
         <dd>
             {$MEDIA_CR}
         </dd>
-    </div>', // default theme
+    </div>',
+        // smartpocket theme
         'id="PictureInfo">
     <li id="simplecr" class="imageInfo">
         <dt>{\'Copyright\'|@translate}</dt>
         <dd>{$MEDIA_CR}</dd>
-    </li>', // smartpocket theme
+    </li>',
+        // bootstrap_darkroom theme
         'id="info-content" class="d-flex flex-column">
     <div id="simplecr" class="imageInfo">
         <dl class="row mb-0">
@@ -111,7 +116,7 @@ function simplecr_add_pic_copyright($content, &$smarty) {
                 {$MEDIA_CR}
             </dd>
         </dl>
-    </div>', // bootstrap_darkroom theme
+    </div>',
     );
 	return preg_replace($search, $replacement, $content, 1);
 }

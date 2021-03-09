@@ -8,12 +8,9 @@ class SimpleCopyright_maintain extends PluginMaintain {
         'customlabel' => 'Custom license label',
         'customurl' => 'http://custom.sample/full_text',
         'customdescr' => 'Custom license short description',
-        'label' => "All Rights Reserved",
-        'url' => "https://en.wikipedia.org/wiki/All_rights_reserved",
-        'descr' => "There is no license granting you with any right to reuse any material from this website in any way, refer to copyrights. Note that 'All Rights Reserved' formula does not have any legal value left in any juridiction but is used here to prevent ambiguity.",
         'enableimagecr' => true,
         'license2link' => true,
-        'shitch2license' => true,
+        'switch2license' => true,
     );
 
     function install($plugin_version, &$errors=array()) {
