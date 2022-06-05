@@ -75,7 +75,7 @@ function simplecr_set_prefilter_add_to_pic_info() {
 }
 
 // Insert the template for the copyright display
-function simplecr_add_pic_copyright($content, &$smarty) {
+function simplecr_add_pic_copyright($content) {
     global $mediacr;
     // prepare plugin configuration
     //$simplecr = safe_unserialize($conf['SimpleCopyright']);
@@ -122,7 +122,7 @@ function simplecr_add_pic_copyright($content, &$smarty) {
 }
 
 // Insert the template for the license display
-function simplecr_add_pic_license($content, &$smarty) {
+function simplecr_add_pic_license($content) {
     // Load plugin language file
     load_language('plugin.lang', SIMPLECR_PATH);
 
