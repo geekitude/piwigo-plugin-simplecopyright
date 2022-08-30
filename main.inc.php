@@ -1,6 +1,6 @@
 <?php
 /*
-Version: 3.02
+Version: 3.03
 Plugin Name: Simple Copyright
 Plugin URI: http://piwigo.org/ext/extension_view.php?eid=839
 Author: Geekitude
