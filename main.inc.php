@@ -1,6 +1,6 @@
 <?php
 /*
-Version: 3.03
+Version: 12.b
 Plugin Name: Simple Copyright
 Plugin URI: http://piwigo.org/ext/extension_view.php?eid=839
 Author: Geekitude
@@ -48,7 +48,7 @@ Has Settings: true
     */
     function simplecr_init() {
         //global $conf, $simplecr, $simplecr_label, $simplecr_url, $simplecr_descr;
-        global $simplecr, $simplecr_label, $simplecr_url, $simplecr_descr;
+        global $simplecr, $simplecr_label, $simplecr_url, $simplecr_descr, $simplecr_about;
 
         //// prepare plugin configuration
         //$simplecr = safe_unserialize($conf['SimpleCopyright']);
@@ -73,14 +73,30 @@ Has Settings: true
             $simplecr_descr = l10n('descr_'.$simplecr['select']) ;
             break ;
         }
+
+        // Prepare links 'about' attribute
+        $simplecr_about = ' about="';
+        // Append protocol
+        if (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on') {
+            $simplecr_about .= 'https://';
+        } else {
+            $simplecr_about .= 'http://';
+        }
+        // Append the host(domain name, ip) to the URL
+        $simplecr_about .= $_SERVER['HTTP_HOST'];
+        // Append the requested resource location to the URL
+        $simplecr_about .= $_SERVER['REQUEST_URI'];
+        // Add final double quote
+        $simplecr_about .= '"';
+
     }
 
     function simplecr_footer() {
-        global $page, $template, $simplecr, $simplecr_label, $simplecr_url, $simplecr_descr, $lang;
+        global $page, $template, $simplecr, $simplecr_label, $simplecr_url, $simplecr_descr, $simplecr_about, $lang;
 
         if (($simplecr['enablefootercr'] == 1) and (script_basename() != 'admin') and ($page['body_id'] != 'thePopuphelpPage')) {
 
-            $copyright_link = '<a href='.$simplecr_url.' target="_blank" title="'.$simplecr_descr.'">'.$simplecr_label.'</a>';
+            $copyright_link = '<a rel="license"'.$simplecr_about.' href='.$simplecr_url.' target="_blank" title="'.$simplecr_descr.'">'.$simplecr_label.'</a>';
         
             // send values to template
             $template->assign('simplecrfooter', $copyright_link);
