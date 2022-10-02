@@ -1,0 +1,10 @@
+#simplecr a.cc img {
+    width: 100px;
+    height: auto;
+    margin: 3px 10px 0 0;
+    vertical-align: -15px;
+}
+
+#simplecr a.cc:hover img {
+    opacity: .7;
+}
