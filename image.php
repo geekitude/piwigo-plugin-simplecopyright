@@ -26,7 +26,7 @@ function simplecr_add_image_vars_to_template() {
 	$result = pwg_query($query);
 	$row = pwg_db_fetch_assoc($result);
 	$filename = $row['path'];
-    if ($simplecr['imageabout'] == 1) { $simplecr_about['uri'] = ltrim($filename, "."); }
+    if ((isset($simplecr['imageabout'])) and ($simplecr['imageabout'] == 1)) { $simplecr_about['uri'] = ltrim($filename, "."); }
 	// Get media IPTC copyright
 	$imginfo = array();
 	getimagesize($filename, $imginfo);
