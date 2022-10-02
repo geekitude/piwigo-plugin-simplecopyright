@@ -1,8 +1,3 @@
-<!-- Load plugin css file -->
-<style>
-<?php include 'plugins/SimpleCopyright/style.css'; ?>
-</style>
-
 <?php
     
 // Change the variables used by the function that changes the template (uses default priority which is 50)
@@ -25,9 +20,7 @@ function simplecr_add_image_vars_to_template() {
 	$query = 'select id,name,file,path FROM ' . IMAGES_TABLE . ' WHERE id = \''.$media_id.'\';';
 	$result = pwg_query($query);
 	$row = pwg_db_fetch_assoc($result);
-	$filename = $row['path'];
-    // fix
-    if ((isset($simplecr['imageabout'])) and ($simplecr['imageabout'] == 1)) { $simplecr_about['uri'] = ltrim($filename, "."); }
+	$filename=$row['path'];
 	// Get media IPTC copyright
 	$imginfo = array();
 	getimagesize($filename, $imginfo);
@@ -39,31 +32,14 @@ function simplecr_add_image_vars_to_template() {
     }
 
     if ($simplecr['license2link'] == true) {
-        switch (true){
-            case stristr($mediacr, 'BY-NC-ND'):
-                $mediacr = '<a class="cc" rel="license" about="'.$simplecr_about['url'].$simplecr_about['uri'].'" target="_blank" href="'.l10n('url_by-nc-nd').'" title="'.l10n('descr_by-nc-nd').'"><img src="plugins/SimpleCopyright/images/by-nc-nd.png" /><span>'.l10n('label_by-nc-nd').'</span></a>';
-                break;
-            case stristr($mediacr, 'BY-NC-SA'):
-                $mediacr = '<a class="cc" rel="license" about="'.$simplecr_about['url'].$simplecr_about['uri'].'" target="_blank" href="'.l10n('url_by-nc-sa').'" title="'.l10n('descr_by-nc-sa').'"><img src="plugins/SimpleCopyright/images/by-nc-sa.png" /><span>'.l10n('label_by-nc-sa').'</span></a>';
-                break;
-            case stristr($mediacr, 'BY-NC'):
-                $mediacr = '<a class="cc" rel="license" about="'.$simplecr_about['url'].$simplecr_about['uri'].'" target="_blank" href="'.l10n('url_by-nc').'" title="'.l10n('descr_by-nc').'"><img src="plugins/SimpleCopyright/images/by-nc.png" /><span>'.l10n('label_by-nc').'</span></a>';
-                break;
-            case stristr($mediacr, 'BY-ND'):
-                $mediacr = '<a class="cc" rel="license" about="'.$simplecr_about['url'].$simplecr_about['uri'].'" target="_blank" href="'.l10n('url_by-nd').'" title="'.l10n('descr_by-nd').'"><img src="plugins/SimpleCopyright/images/by-nd.png" /><span>'.l10n('label_by-nd').'</span></a>';
-                break;
-            case stristr($mediacr, 'BY-SA'):
-                $mediacr = '<a class="cc" rel="license" about="'.$simplecr_about['url'].$simplecr_about['uri'].'" target="_blank" href="'.l10n('url_by-sa').'" title="'.l10n('descr_by-sa').'"><img src="plugins/SimpleCopyright/images/by-sa.png" /><span>'.l10n('label_by-SA').'</span></a>';
-                break;
-            case stristr($mediacr, 'BY'):
-                $mediacr = '<a class="cc" rel="license" about="'.$simplecr_about['url'].$simplecr_about['uri'].'" target="_blank" href="'.l10n('url_by').'" title="'.l10n('descr_by').'"><img src="plugins/SimpleCopyright/images/by.png" /><span>'.l10n('label_by').'</span></a>';
-                break;
-            case stristr($mediacr, $simplecr['customlabel']):
-                $mediacr = '<a class="cc custom" rel="license" about="'.$simplecr_about['url'].$simplecr_about['uri'].'" target="_blank" href="'.$simplecr['customurl'].'" title="'.$simplecr['customdescr'].'">'.$simplecr['customlabel'].'</a>';
-                break;
-            default:
-                $mediacr = '<a class="cc nolicense" rel="license" about="'.$simplecr_about['url'].$simplecr_about['uri'].'" target="_blank" href="'.l10n('url_no-license').'" title="'.l10n('descr_no-license').'">'.l10n('label_no-license').'</a>';
-        }
+        $mediacr = str_replace(array('CC Attribution 4.0 International', 'CC BY 4.0 International', 'CC BY 4.0'), '<a rel="license"'.$simplecr_about.' target="_blank" href="'.l10n('url_by').'" title="'.l10n('descr_by').'">CC BY 4.0</a>', $mediacr);
+        $mediacr = str_replace(array('CC Attribution-ShareAlike 4.0 International', 'CC BY-SA 4.0 International', 'CC BY-SA 4.0'), '<a rel="license"'.$simplecr_about.' target="_blank" href="'.l10n('url_by-sa').'" title="'.l10n('descr_by-sa').'">CC BY-SA 4.0</a>', $mediacr);
+        $mediacr = str_replace(array('CC Attribution-NoDerivatives 4.0 International', 'CC BY-ND 4.0 International', 'CC BY-ND 4.0'), '<a rel="license"'.$simplecr_about.' target="_blank" href="'.l10n('url_by-nd').'" title="'.l10n('descr_by-nd').'">CC BY-ND 4.0</a>', $mediacr);
+        $mediacr = str_replace(array('CC Attribution-NonCommercial 4.0 International', 'CC BY-NC 4.0 International', 'CC BY-NC 4.0'), '<a rel="license"'.$simplecr_about.' target="_blank" href="'.l10n('url_by-nc').'" title="'.l10n('descr_by-nc').'">CC BY-NC 4.0</a>', $mediacr);
+        $mediacr = str_replace(array('CC Attribution-NonCommercial-ShareAlike 4.0 International', 'CC BY-NC-SA 4.0 International', 'CC BY-NC-SA 4.0'), '<a rel="license"'.$simplecr_about.' target="_blank" href="'.l10n('url_by-nc-sa').'" title="'.l10n('descr_by-nc-sa').'">CC BY-NC-SA 4.0</a>', $mediacr);
+        $mediacr = str_replace(array('CC Attribution-NonCommercial-NoDerivatives 4.0 International', 'CC BY-NC-ND 4.0 International', 'CC BY-NC-ND 4.0'), '<a rel="license"'.$simplecr_about.' target="_blank" href="'.l10n('url_by-nc-nd').'" title="'.l10n('descr_by-nc-nd').'">CC BY-NC-ND 4.0</a>', $mediacr);
+        $mediacr = str_replace($simplecr['customlabel'], '<a rel="license"'.$simplecr_about.' target="_blank" href="'.$simplecr['customurl'].'" title="'.$simplecr['customdescr'].'">'.$simplecr['customlabel'].'</a>', $mediacr);
+        $mediacr = str_replace(array('All Rights Reserved', 'Tous droits réservés',), '<a rel="license"'.$simplecr_about.' target="_blank" href="'.l10n('url_no-license').'" title="'.l10n('descr_no-license').'">'.l10n('label_no-license').'</a>', $mediacr);
     }
 
 	// Show block only on the picture page
@@ -107,6 +83,7 @@ function simplecr_add_pic_copyright($content) {
     // Load plugin language file
     load_language('plugin.lang', SIMPLECR_PATH);
 
+//https://creativecommons.org/licenses/by-nc-nd/4.0/
 	// Add the information after the author - so before the createdate
 	$search = array(
         '#class="imageInfoTable">#', // default theme
@@ -159,7 +136,7 @@ function simplecr_add_pic_license($content) {
         <div id="simplecr" class="imageInfo">
             <dt>{\'License\'|@translate}</dt>
             <dd>
-                <a rel="license" about="'.$simplecr_about['url'].$simplecr_about['uri'].'" target="_blank" href="{$SIMPLECR_URL}" title="{$SIMPLECR_DESCR}">{$SIMPLECR_LABEL}</a> <img src="plugins/SimpleCopyright/images/important.png" width="16" style="margin: 0 0 -3px 3px;" title="{\'Image does not contain any Copyright, it would be wise to add one in metadata.\'|@translate}" />
+                <a rel="license"'.$simplecr_about.' target="_blank" href="{$SIMPLECR_URL}" title="{$SIMPLECR_DESCR}">{$SIMPLECR_LABEL}</a> <img src="plugins/SimpleCopyright/images/important.png" width="16" style="margin: 0 0 -3px 3px;" title="{\'Image does not contain any Copyright, it would be wise to add one in metadata.\'|@translate}" />
             </dd>
         </div>';
     } else {
@@ -167,7 +144,7 @@ function simplecr_add_pic_license($content) {
         <div id="simplecr" class="imageInfo">
             <dt>{\'License\'|@translate}</dt>
             <dd>
-                <a rel="license" about="'.$simplecr_about['url'].$simplecr_about['uri'].'" target="_blank" href="{$SIMPLECR_URL}" title="{$SIMPLECR_DESCR}">{$SIMPLECR_LABEL}</a>
+                <a rel="license"'.$simplecr_about.' target="_blank" href="{$SIMPLECR_URL}" title="{$SIMPLECR_DESCR}">{$SIMPLECR_LABEL}</a>
             </dd>
         </div>';
     }

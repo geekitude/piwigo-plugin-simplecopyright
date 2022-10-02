@@ -36,7 +36,6 @@
             'enableimagecr' => isset($_POST['enableimagecr']),
             'license2link' => isset($_POST['license2link']),
             'switch2license' => isset($_POST['switch2license']),
-            'imageabout' => isset($_POST['imageabout']),
         );
         
         conf_update_param('SimpleCopyright', $conf['SimpleCopyright']);

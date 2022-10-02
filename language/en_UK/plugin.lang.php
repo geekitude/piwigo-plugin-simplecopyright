@@ -11,11 +11,9 @@
     $lang['Will be shown as a tooltip when hovering license link'] = 'Will be shown as a tooltip when hovering license link';
     $lang['Image pages'] = 'Pages des images';
     $lang['Display image page Copyright section'] = 'Display image page Copyright section';
-    $lang['If image has no Copyright info, display default license'] = 'If image has no Copyright info, display default license';
     $lang['Turn recognizable license label in Copyright metadata into a link to that license details'] = 'Turn recognizable license label in Copyright metadata into a link to that license details';
     $lang['Examples of recognizable license labels:'] = 'Examples of recognizable license labels:';
-    $lang['Use original image URL instead of page URL for link\'s `about` property'] = 'Use original image URL instead of page URL for link\'s `about` property';
-    $lang['This option seems to greatly improve images SEO but keep in mind that it offers a link to download original image.'] = 'This option seems to greatly improve images SEO but keep in mind that it offers a link to download original image.';
+    $lang['If image has no Copyright info, display a License section instead (with a link to default license)'] = 'If image has no Copyright info, display a License section instead (with a link to default license)';
     $lang['About copyright notice'] = 'About copyright notice';
     $lang['Elements legally required to correctly present a Copyright in most countries:'] = 'Elements legally required to correctly present a Copyright in most countries:';
     $lang['the © symbol (C letter in a circle), the word “Copyright”, or, the abbreviation “Copr.”'] = 'the © symbol (C letter in a circle), the word “Copyright”, or, the abbreviation “Copr.”';
@@ -39,27 +37,27 @@
     
     $lang['label_by']         = 'CC Attribution 4.0 International';
     $lang['url_by']           = 'https://creativecommons.org/licenses/by/4.0/';
-    $lang['descr_by']         = 'You are free to [SHARE] (copy and redistribute the material in any medium or format) or [ADAPT] (remix, transform, and build upon the material) for any purpose, even [COMMERCIALLY] but must give appropriate [CREDIT].';
+    $lang['descr_by']         = 'You are free to share (copy and redistribute the material in any medium or format) or adapt (remix, transform, and build upon the material) for any purpose, even commercially but must give appropriate credit.';
     
     $lang['label_by-sa'] = 'CC Attribution-ShareAlike 4.0 International';
     $lang['url_by-sa'] = 'https://creativecommons.org/licenses/by-sa/4.0/';
-    $lang['descr_by-sa'] = 'You are free to [SHARE] (copy and redistribute the material in any medium or format) or [ADAPT] (remix, transform, and build upon the material) for any purpose, even [COMMERCIALLY] but must give appropriate [CREDIT]. If you remix, transform, or build upon the material, you must distribute your contributions [UNDER THE SAME LICENSE] as the original.';
+    $lang['descr_by-sa'] = 'You are free to share (copy and redistribute the material in any medium or format) or adapt (remix, transform, and build upon the material) for any purpose, even commercially but must give appropriate credit. If you remix, transform, or build upon the material, you must distribute your contributions under the same license as the original.';
     
     $lang['label_by-nd']         = 'CC Attribution-NoDerivatives 4.0 International';
     $lang['url_by-nd']           = 'https://creativecommons.org/licenses/by-nd/4.0/';
-    $lang['descr_by-nd']         = 'You are free to [SHARE] (copy and redistribute the material in any medium or format) for any purpose, even [COMMERCIALLY]. If you remix, transform, or build upon the material, you [MAY NOT DISTRIBUTE THE MODIFIED MATERIAL].';
+    $lang['descr_by-nd']         = 'You are free to share (copy and redistribute the material in any medium or format) for any purpose, even commercially. If you remix, transform, or build upon the material, you may not distribute the modified material.';
     
     $lang['label_by-nc']      = 'CC Attribution-NonCommercial 4.0 International';
     $lang['url_by-nc']        = 'https://creativecommons.org/licenses/by-nc/4.0/';
-    $lang['descr_by-nc']      = 'You are free to [SHARE] (copy and redistribute the material in any medium or format) or [ADAPT] (remix, transform, and build upon the material) for any [NON-COMMERCIAL] purpose but must give appropriate [CREDIT].';
+    $lang['descr_by-nc']      = 'You are free to share (copy and redistribute the material in any medium or format) or adapt (remix, transform, and build upon the material) for any non-commercial purpose but must give appropriate credit.';
     
     $lang['label_by-nc-sa']   = 'CC Attribution-NonCommercial-ShareAlike 4.0 International';
     $lang['url_by-nc-sa']     = 'https://creativecommons.org/licenses/by-nc-sa/4.0/';
-    $lang['descr_by-nc-sa']   = 'You are free to [SHARE] (copy and redistribute the material in any medium or format) or [ADAPT] (remix, transform, and build upon the material) for any [NON-COMMERCIAL] purpose but must give appropriate [CREDIT]. If you remix, transform, or build upon the material, you must distribute your contributions [UNDER THE SAME LICENSE] as the original.';
+    $lang['descr_by-nc-sa']   = 'You are free to share (copy and redistribute the material in any medium or format) or adapt (remix, transform, and build upon the material) for any non-commercial purpose but must give appropriate credit. If you remix, transform, or build upon the material, you must distribute your contributions under the same license as the original.';
     
     $lang['label_by-nc-nd']   = 'CC Attribution-NonCommercial-NoDerivatives 4.0 International';
     $lang['url_by-nc-nd']     = 'https://creativecommons.org/licenses/by-nc-nd/4.0/';
-    $lang['descr_by-nc-nd']   = 'You are free to [SHARE] (copy and redistribute the material in any medium or format) for any [NON-COMMERCIAL] purpose but must give appropriate [CREDIT]. If you remix, transform, or build upon the material, you [MAY NOT DISTRIBUTE THE MODIFIED MATERIAL].';
+    $lang['descr_by-nc-nd']   = 'You are free to share (copy and redistribute the material in any medium or format) for any non-commercial purpose but must give appropriate credit. If you remix, transform, or build upon the material, you may not distribute the modified material.';
     
     $lang['label_no-license'] = 'All Rights Reserved';
     $lang['url_no-license']   = 'https://en.wikipedia.org/wiki/All_rights_reserved';
