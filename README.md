@@ -7,6 +7,7 @@ Note that after installation, plugin is set to ```No license``` by default as it
 [Official page](https://piwigo.org/ext/extension_view.php?eid=839)
 
 # Revisions
+* [12.d] then [12.e] Fix 12.c error
 * [12.c]
   * Improved license-to-link recognition (defaults to `all-rights-reserved` if no CC or custom license is detected)
   * Footer license link `about` always points to page URL but you can choose if image metadata license link should point to full size image
