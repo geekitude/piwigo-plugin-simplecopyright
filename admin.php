@@ -14,6 +14,7 @@
             $simplecr_url = $_POST['customurl'];
             $simplecr_descr = $_POST['customdescr'];
             break ;
+        case 'O' :
         case 'by' :
         case 'by-sa' :
         case 'by-nd' :
@@ -36,6 +37,7 @@
             'enableimagecr' => isset($_POST['enableimagecr']),
             'license2link' => isset($_POST['license2link']),
             'switch2license' => isset($_POST['switch2license']),
+            'imageabout' => isset($_POST['imageabout']),
         );
         
         conf_update_param('SimpleCopyright', $conf['SimpleCopyright']);
@@ -53,6 +55,7 @@
 
     // Base copyright choices
     $select_options = array(
+        '0' => l10n('CC0'),
         'by' => l10n('CC BY 4.0'),
         'by-sa' => l10n('CC BY-SA 4.0'),
         'by-nd' => l10n('CC BY-ND 4.0'),
@@ -64,11 +67,6 @@
     );
 
     // send config to template
-    //$template->assign(array(
-    //    'simplecr' => safe_unserialize($conf['SimpleCopyright']),
-    //    'simplecr_descr' => $simplecr_descr,
-    //    'select_options' => $select_options
-    //));
     $template->assign(array(
         'simplecr' => safe_unserialize($conf['SimpleCopyright']),
         'simplecr_descr' => $simplecr_descr,

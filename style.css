@@ -1,10 +1,37 @@
 #simplecr a.cc img {
-    width: 100px;
-    height: auto;
-    margin: 3px 10px 0 0;
-    vertical-align: -15px;
+    vertical-align: -5px;
+}
+[dir=ltr] #simplecr a.cc img {
+    margin: 3px 8px 0 0;
+}
+[dir=rtl] #simplecr a.cc img {
+    margin: 3px 0 0 8px;
 }
 
 #simplecr a.cc:hover img {
     opacity: .7;
+}
+
+#simplecrfooter {
+    margin: 0 auto 0 auto;
+}
+
+#simplecrfooter a {
+    white-space: nowrap;
+}
+
+#copyright #simplecrfooter::before {
+    content: " - ";
+}
+
+@media screen and (max-width: 1000px) {
+    #copyright #simplecrfooter::before {
+        display: block;
+        content: "";
+    }
+    #copyright #simplecrfooter {
+        display: block;
+        margin: 0 auto 0 auto;
+        max-width: 85%;
+    }
 }

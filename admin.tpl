@@ -5,7 +5,9 @@
     function setSummary() {
         var $summary = "";
         var $selected = jQuery('#simplecr_default_dropdown').val();
-        if ($selected === "by") {
+        if ($selected === "0") {
+            $summary = "You can copy, modify, distribute and perform the work, even for commercial purposes, all without asking permission.";
+        } else if ($selected === "by") {
             $summary = "You are free to share (copy and redistribute the material in any medium or format) or adapt (remix, transform, and build upon the material) for any purpose, even commercially but must give appropriate credit.";
         } else if ($selected === "by-sa") {
             $summary = {'descr_by-sa'|@translate}
@@ -90,14 +92,21 @@
             </li>
             <li>
                 <label>
+                    <input type="checkbox" name="switch2license" value="1" {if ($simplecr.switch2license)}checked="checked"{/if}>
+                    <b>{'If image has no Copyright info, display default license'|@translate}</b>.
+                </label>
+            </li>
+            <li>
+                <label>
                     <input type="checkbox" name="license2link" value="1" {if ($simplecr.license2link)}checked="checked"{/if}>
                     <b>{'Turn recognizable license label in Copyright metadata into a link to that license details'|@translate}</b>. {'Examples of recognizable license labels:'|@translate} <i>CC BY 4.0</i>, <i>CC Attribution 4.0 International</i>, <i>CC Attribution 4.0</i>, <i>CC BY-SA 4.0</i>, <i>CC Attribution-ShareAlike 4.0 International</i>, <i>CC Attribution-ShareAlike 4.0</i>, <i>All Rights Reserved</i>, ...
                 </label>
             </li>
             <li>
                 <label>
-                    <input type="checkbox" name="switch2license" value="1" {if ($simplecr.switch2license)}checked="checked"{/if}>
-                    <b>{'If image has no Copyright info, display a License section instead (with a link to default license)'|@translate}</b>.
+                    <input type="checkbox" name="imageabout" value="0" {if $simplecr.imageabout}checked="checked"{/if}>
+                    <b>{'Use original image URL instead of page URL for link\'s `about` property'|@translate}</b>
+                    <p><img src="plugins/SimpleCopyright/images/important.png" alt="*IMPORTANT*" height="48" width="48" align="middle" style="margin-right: 5px;"><i>{"This option seems to greatly improve images SEO but keep in mind that it offers a link to download original image."|@translate}</i></p>
                 </label>
             </li>
         </ul>

@@ -21,15 +21,7 @@ class SimpleCopyright_maintain extends PluginMaintain {
         }
     }
 
-//    function activate($plugin_version, &$errors=array()) {
-//        global $conf;
-//        if (empty($conf['SimpleCopyright'])) {
-//            conf_update_param('SimpleCopyright', $this->default_conf, true);
-//        }
-//    }
-
     function update($old_version, $new_version, &$errors=array()) {
-        //global $conf;
         $this->install($new_version, $errors);
     }
 

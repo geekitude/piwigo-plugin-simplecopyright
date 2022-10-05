@@ -1,6 +1,6 @@
 <?php
 /*
-Version: 12.f
+Version: 12.g
 Plugin Name: Simple Copyright
 Plugin URI: http://piwigo.org/ext/extension_view.php?eid=839
 Author: Geekitude
@@ -47,56 +47,59 @@ Has Settings: true
     *   - load language
     */
     function simplecr_init() {
-        //global $conf, $simplecr, $simplecr_label, $simplecr_url, $simplecr_descr;
-        global $simplecr, $simplecr_label, $simplecr_url, $simplecr_descr, $simplecr_about;
+        global $template, $simplecr, $simplecr_label, $simplecr_url, $simplecr_descr, $simplecr_about;
 
-        //// prepare plugin configuration
-        //$simplecr = safe_unserialize($conf['SimpleCopyright']);
+        $template->func_combine_css(array(
+                'path' => 'plugins/SimpleCopyright/style.css',
+            )
+        );
 
         // load plugin language file
         load_language('plugin.lang', SIMPLECR_PATH);
         switch ( $simplecr['select'] ) {
-        case 'custom' :
-            $simplecr_label = $simplecr['customlabel'];
-            $simplecr_url   = $simplecr['customurl'];
-            $simplecr_descr = $simplecr['customdescr'];
-            break ;
-        case 'by' :
-        case 'by-sa' :
-        case 'by-nd' :
-        case 'by-nc' :
-        case 'by-nc-sa' :
-        case 'by-nc-nd' :
-        case 'no-license' :
-            $simplecr_label = l10n('label_'.$simplecr['select']) ;
-            $simplecr_url   = l10n('url_'  .$simplecr['select']) ; 
-            $simplecr_descr = l10n('descr_'.$simplecr['select']) ;
-            break ;
-        }
+            case 'custom' :
+                $simplecr_label = $simplecr['customlabel'];
+                $simplecr_url   = $simplecr['customurl'];
+                $simplecr_descr = $simplecr['customdescr'];
+                break ;
+            case '0' :
+                $simplecr_label = l10n('label_cc');
+                $simplecr_url   = l10n('url_cc');
+                $simplecr_descr = l10n('descr_cc');
+                break ;
+            case 'by' :
+            case 'by-sa' :
+            case 'by-nd' :
+            case 'by-nc' :
+            case 'by-nc-sa' :
+            case 'by-nc-nd' :
+            case 'no-license' :
+                $simplecr_label = l10n('label_'.$simplecr['select']) ;
+                $simplecr_url   = l10n('url_'  .$simplecr['select']) ; 
+                $simplecr_descr = l10n('descr_'.$simplecr['select']) ;
+                break ;
+            }
 
         // Prepare links 'about' attribute
-        $simplecr_about = ' about="';
+        $simplecr_about = array();
         // Append protocol
         if (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on') {
-            $simplecr_about .= 'https://';
+            $simplecr_about['url'] = 'https://';
         } else {
-            $simplecr_about .= 'http://';
+            $simplecr_about['url'] = 'http://';
         }
         // Append the host(domain name, ip) to the URL
-        $simplecr_about .= $_SERVER['HTTP_HOST'];
+        $simplecr_about['url'] .= $_SERVER['HTTP_HOST'];
         // Append the requested resource location to the URL
-        $simplecr_about .= $_SERVER['REQUEST_URI'];
-        // Add final double quote
-        $simplecr_about .= '"';
+        $simplecr_about['uri'] = $_SERVER['REQUEST_URI'];
 
     }
 
     function simplecr_footer() {
         global $page, $template, $simplecr, $simplecr_label, $simplecr_url, $simplecr_descr, $simplecr_about, $lang;
-
         if (($simplecr['enablefootercr'] == 1) and (script_basename() != 'admin') and ($page['body_id'] != 'thePopuphelpPage')) {
 
-            $copyright_link = '<a rel="license"'.$simplecr_about.' href='.$simplecr_url.' target="_blank" title="'.$simplecr_descr.'">'.$simplecr_label.'</a>';
+            $copyright_link = '<a rel="license" about="'.$simplecr_about['url'].$simplecr_about['uri'].'" href='.$simplecr_url.' target="_blank" title="'.$simplecr_descr.'">'.$simplecr_label.'</a>';
         
             // send values to template
             $template->assign('simplecrfooter', $copyright_link);
