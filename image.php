@@ -34,26 +34,26 @@ function simplecr_add_image_vars_to_template() {
     if ($simplecr['license2link'] == true) {
         switch (true){
             case stristr($mediacr, 'BY-NC-ND'):
-                $mediacr = '<a class="cc" rel="license" about="'.$simplecr_about['url'].$simplecr_about['uri'].'" target="_blank" href="'.l10n('url_by-nc-nd').'" title="'.l10n('descr_by-nc-nd').'"><img src="../../../plugins/SimpleCopyright/images/by-nc-nd.png" /><span>'.l10n('label_by-nc-nd').'</span></a>';
+                $mediacr = '<a class="cc" rel="license" about="'.$simplecr_about['url'].$simplecr_about['uri'].'" target="_blank" href="'.l10n('url_by-nc-nd').'" title="'.l10n('descr_by-nc-nd').'"><img src="'.SIMPLECR_PATH.'images/by-nc-nd.png" /><span>'.l10n('label_by-nc-nd').'</span></a>';
                 break;
             case stristr($mediacr, 'BY-NC-SA'):
-                $mediacr = '<a class="cc" rel="license" about="'.$simplecr_about['url'].$simplecr_about['uri'].'" target="_blank" href="'.l10n('url_by-nc-sa').'" title="'.l10n('descr_by-nc-sa').'"><img src="../../../plugins/SimpleCopyright/images/by-nc-sa.png" /><span>'.l10n('label_by-nc-sa').'</span></a>';
+                $mediacr = '<a class="cc" rel="license" about="'.$simplecr_about['url'].$simplecr_about['uri'].'" target="_blank" href="'.l10n('url_by-nc-sa').'" title="'.l10n('descr_by-nc-sa').'"><img src="'.SIMPLECR_PATH.'images/by-nc-sa.png" /><span>'.l10n('label_by-nc-sa').'</span></a>';
                 break;
             case stristr($mediacr, 'BY-NC'):
-                $mediacr = '<a class="cc" rel="license" about="'.$simplecr_about['url'].$simplecr_about['uri'].'" target="_blank" href="'.l10n('url_by-nc').'" title="'.l10n('descr_by-nc').'"><img src="../../../plugins/SimpleCopyright/images/by-nc.png" /><span>'.l10n('label_by-nc').'</span></a>';
+                $mediacr = '<a class="cc" rel="license" about="'.$simplecr_about['url'].$simplecr_about['uri'].'" target="_blank" href="'.l10n('url_by-nc').'" title="'.l10n('descr_by-nc').'"><img src="'.SIMPLECR_PATH.'images/by-nc.png" /><span>'.l10n('label_by-nc').'</span></a>';
                 break;
             case stristr($mediacr, 'BY-ND'):
-                $mediacr = '<a class="cc" rel="license" about="'.$simplecr_about['url'].$simplecr_about['uri'].'" target="_blank" href="'.l10n('url_by-nd').'" title="'.l10n('descr_by-nd').'"><img src="../../../plugins/SimpleCopyright/images/by-nd.png" /><span>'.l10n('label_by-nd').'</span></a>';
+                $mediacr = '<a class="cc" rel="license" about="'.$simplecr_about['url'].$simplecr_about['uri'].'" target="_blank" href="'.l10n('url_by-nd').'" title="'.l10n('descr_by-nd').'"><img src="'.SIMPLECR_PATH.'images/by-nd.png" /><span>'.l10n('label_by-nd').'</span></a>';
                 break;
             case stristr($mediacr, 'BY-SA'):
-                $mediacr = '<a class="cc" rel="license" about="'.$simplecr_about['url'].$simplecr_about['uri'].'" target="_blank" href="'.l10n('url_by-sa').'" title="'.l10n('descr_by-sa').'"><img src="../../../plugins/SimpleCopyright/images/by-sa.png" /><span>'.l10n('label_by-SA').'</span></a>';
+                $mediacr = '<a class="cc" rel="license" about="'.$simplecr_about['url'].$simplecr_about['uri'].'" target="_blank" href="'.l10n('url_by-sa').'" title="'.l10n('descr_by-sa').'"><img src="'.SIMPLECR_PATH.'images/by-sa.png" /><span>'.l10n('label_by-SA').'</span></a>';
                 break;
             case stristr($mediacr, 'BY'):
-                $mediacr = '<a class="cc" rel="license" about="'.$simplecr_about['url'].$simplecr_about['uri'].'" target="_blank" href="'.l10n('url_by').'" title="'.l10n('descr_by').'"><img src="../../../plugins/SimpleCopyright/images/by.png" /><span>'.l10n('label_by').'</span></a>';
+                $mediacr = '<a class="cc" rel="license" about="'.$simplecr_about['url'].$simplecr_about['uri'].'" target="_blank" href="'.l10n('url_by').'" title="'.l10n('descr_by').'"><img src="'.SIMPLECR_PATH.'images/by.png" /><span>'.l10n('label_by').'</span></a>';
                 break;
             case stristr($mediacr, 'CC0'):
             case stristr($mediacr, 'public'):
-                $mediacr = '<a class="cc" rel="license" about="'.$simplecr_about['url'].$simplecr_about['uri'].'" target="_blank" href="'.l10n('url_cc').'" title="'.l10n('descr_cc').'"><img src="../../../plugins/SimpleCopyright/images/cc-zero.png" /><span>'.l10n('label_cc').'</span></a>';
+                $mediacr = '<a class="cc" rel="license" about="'.$simplecr_about['url'].$simplecr_about['uri'].'" target="_blank" href="'.l10n('url_cc').'" title="'.l10n('descr_cc').'"><img src="'.SIMPLECR_PATH.'images/cc-zero.png" /><span>'.l10n('label_cc').'</span></a>';
                 break;
             case stristr($mediacr, $simplecr['customlabel']):
                 $mediacr = '<a class="cc custom" rel="license" about="'.$simplecr_about['url'].$simplecr_about['uri'].'" target="_blank" href="'.$simplecr['customurl'].'" title="'.$simplecr['customdescr'].'">'.$simplecr['customlabel'].'</a>';
@@ -167,7 +167,7 @@ function simplecr_add_pic_license($content) {
         <div id="simplecr" class="imageInfo">
             <dt>{\'License\'|@translate}</dt>
             <dd>
-                <a rel="license" about="'.$simplecr_about['url'].$simplecr_about['uri'].'" target="_blank" href="{$SIMPLECR_URL}" title="{$SIMPLECR_DESCR}">{$SIMPLECR_LABEL}</a> <img src="../../../plugins/SimpleCopyright/images/important.png" width="16" style="margin: 0 0 -3px 3px;" title="{\'Image does not contain any Copyright, it would be wise to add one in metadata.\'|@translate}" />
+                <a rel="license" about="'.$simplecr_about['url'].$simplecr_about['uri'].'" target="_blank" href="{$SIMPLECR_URL}" title="{$SIMPLECR_DESCR}">{$SIMPLECR_LABEL}</a> <img src="'.SIMPLECR_PATH.'images/important.png" width="16" style="margin: 0 0 -3px 3px;" title="{\'Image does not contain any Copyright, it would be wise to add one in metadata.\'|@translate}" />
             </dd>
         </div>';
     } else {

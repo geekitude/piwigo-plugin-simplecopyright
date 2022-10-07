@@ -151,6 +151,7 @@ LocalFiles Editor plugin is your friend to customize CSS to improve design depen
 
 # Revisions
 
+* [12.i] Fix pictogram url bug again :(
 * [12.h] Fix a pictogram url bug that occurs on some piwigo installations
 * [12.g]
   * Added CC0 license (image license must contain `cc0` or `public` to be recognized)
