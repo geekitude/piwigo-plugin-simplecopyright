@@ -7,7 +7,7 @@ add_event_handler('loc_begin_picture', 'simplecr_set_prefilter_add_to_pic_info',
 
 // Assign values to the variables in the template
 function simplecr_add_image_vars_to_template() {
-	global $page, $template, $simplecr, $simplecr_label, $simplecr_url, $simplecr_descr, $simplecr_about, $mediacr ;
+	global $page, $template, $simplecr, $simplecr_label, $simplecr_url, $simplecr_descr, $simplecr_about, $mediacr;
 
     // Load plugin language file
     load_language('plugin.lang', SIMPLECR_PATH);
@@ -21,14 +21,35 @@ function simplecr_add_image_vars_to_template() {
 
     if ((isset($simplecr['imageabout'])) and ($simplecr['imageabout'] == 1)) { $simplecr_about['uri'] = ltrim($filename, "."); }
 
+    // Get media EXIF copyright
+    $exifcr = null;
+    $exif = exif_read_data($filename, 'EXIF');
+    if (isset($exif['COMPUTED']['Copyright'])) {
+        $exifcr = $exif['COMPUTED']['Copyright'];
+    }
+
 	// Get media IPTC copyright
+    $iptccr = null;
 	$imginfo = array();
 	getimagesize($filename, $imginfo);
 	if (isset($imginfo['APP13'])){
         $iptc = iptcparse($imginfo['APP13']);
         if (isset($iptc['2#116'][0])) {
-            $mediacr = $iptc['2#116'][0];
+            $iptccr = $iptc['2#116'][0];
         }
+    }
+
+    $crconflict = null;
+    if (isset($iptccr) and ($iptccr != null))
+    {
+        $mediacr = $iptccr;
+        if (isset($exifcr) && ($exifcr != null) && ($exifcr == $iptccr))
+        {
+            $crconflict =  '<img src="'.SIMPLECR_PATH.'images/important.png" width="16" style="margin: 0 0 -3px 3px;" title="'.l10n('copyright-conflict').'" />';
+        }
+    } elseif (isset($exifcr) and ($exifcr != null))
+    {
+        $mediacr = $exifcr;
     }
 
     if ($simplecr['license2link'] == true) {
@@ -62,6 +83,7 @@ function simplecr_add_image_vars_to_template() {
                 $mediacr = '<a class="cc nolicense" rel="license" about="'.$simplecr_about['url'].$simplecr_about['uri'].'" target="_blank" href="'.l10n('url_no-license').'" title="'.l10n('descr_no-license').'">'.l10n('label_no-license').'</a>';
         }
     }
+    $mediacr .= $crconflict;
 
 	// Show block only on the picture page
 	if ( !empty($page['image_id']) ) {
@@ -167,7 +189,7 @@ function simplecr_add_pic_license($content) {
         <div id="simplecr" class="imageInfo">
             <dt>{\'License\'|@translate}</dt>
             <dd>
-                <a rel="license" about="'.$simplecr_about['url'].$simplecr_about['uri'].'" target="_blank" href="{$SIMPLECR_URL}" title="{$SIMPLECR_DESCR}">{$SIMPLECR_LABEL}</a> <img src="'.SIMPLECR_PATH.'images/important.png" width="16" style="margin: 0 0 -3px 3px;" title="{\'Image does not contain any Copyright, it would be wise to add one in metadata.\'|@translate}" />
+                <a rel="license" about="'.$simplecr_about['url'].$simplecr_about['uri'].'" target="_blank" href="{$SIMPLECR_URL}" title="{$SIMPLECR_DESCR}">{$SIMPLECR_LABEL}</a> <img src="'.SIMPLECR_PATH.'images/important.png" width="16" style="margin: 0 0 -3px 3px;" title="{\'no-meta-copyright\'|@translate}" />
             </dd>
         </div>';
     } else {

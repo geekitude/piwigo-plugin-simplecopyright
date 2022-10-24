@@ -151,6 +151,10 @@ LocalFiles Editor plugin is your friend to customize CSS to improve design depen
 
 # Revisions
 
+* [13.a]
+  * Added EXIF Copyright (if EXIF and IPTC Copyright both exist but are diferent, an alert to fix that will be shown after image copyright
+  * Fix copyright summary shown on plugin's settings page
+  * French translation minor fixes
 * [12.i] Fix pictogram url bug again :(
 * [12.h] Fix a pictogram url bug that occurs on some piwigo installations
 * [12.g]
