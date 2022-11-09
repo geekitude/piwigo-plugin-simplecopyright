@@ -1,0 +1,1 @@
+Vis en global opphavsrett, som respekterer tilsvarende IPTC-felt hvis den er angitt.
