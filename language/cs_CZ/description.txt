@@ -1,0 +1,1 @@
+Zobrazí globální copyright, přičemž respektuje odpovídající pole IPTC, pokud je nastaveno.
