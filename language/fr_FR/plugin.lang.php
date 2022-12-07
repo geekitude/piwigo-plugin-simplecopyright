@@ -18,7 +18,6 @@
     $lang['This option seems to greatly improve images SEO but keep in mind that it offers a link to download original image.'] = 'Cette option semble grandement améliorer le référencement des images mais gardez à l\'esprit que cela offre un lien pour télécharger l\'image originale.';
     $lang['About copyright notice'] = 'À propos de la présentation des droits d’auteur';
     $lang['Elements legally required to correctly present a Copyright in most countries:'] = 'Éléments légalement requis pour présenter correctement des Droits d’Auteur dans la majorité des pays :';
-    $lang['the © symbol (C letter in a circle), the word “Copyright”, or the abbreviation “Copr.”'] = 'le symbole © (lettre C dans un cercle), le mot “Copyright”, ou, l’abbréviation “Copr.”';
     $lang['Note that the abbreviation might not be acceptable in some countries'] = 'Notez que l’abbréviation n’est pas jugée acceptable dans certains pays';
     $lang['the year of first publication'] = 'l’année de première publication';
     $lang['the name of the copyright owner, an abbreviation by which the name can be recognized, or a notoriously known alternative designation of owner'] = 'le nom du propriétaire des droits d’auteur, une abbréviation par laquelle le nom peut être reconnu, ou une désignation alternative notoire du propriétaire';
@@ -35,7 +34,7 @@
     $lang['Copyright'] = 'Droits d’auteur';
     $lang['License'] = 'Licence';
     $lang['Image does not contain any Copyright, it would be wise to add one in metadata.'] = 'L’image ne contient aucune mention de Droits d’Auteur, il serait sage d’en ajouter une aux métadonnées.';
-    //$lang['All Rights Reserved'] = 'Tous Droits Réservés';
+$lang['All Rights Reserved'] = 'Tous droits réservés';
     
     $lang['label_cc']         = 'CC0 1.0 Universel';
     $lang['url_cc']           = 'https://creativecommons.org/publicdomain/zero/1.0/deed.fr';
@@ -68,4 +67,4 @@
     $lang['label_no-license'] = 'Pas de licence mais des droits';
     $lang['url_no-license']   = 'https://fr.wikipedia.org/wiki/Droit_d%27auteur';
     $lang['descr_no-license'] = 'Le droit d’auteur s’applique dans les pays de droit civil (Belgique et France notamment). Il protège les œuvres de l’esprit originales, dès leur création, mêmes si elles sont inédites ou inachevées. Aucune formalité d’enregistrement ou fixation matérielle de l’œuvre n’est nécessaire pour bénéficier du droit d’auteur. Dans la plupart des pays, il n’est donc pas nécessaire d’inscrire la mention « tous droits réservés », ni le symbole ©, qui ne servent qu’à indiquer que l’œuvre est protégée par le droit d’auteur, et non à conférer la protection juridique. Un enregistrement volontaire peut toutefois s’avérer utile pour prouver sa qualité d’auteur, ou pour faciliter la gestion collective des droits.';
-?>
+$lang['the © symbol (C letter in a circle), the word “Copyright”, or, the abbreviation “Copr.”'] = 'le symbole © (caractère c dans un cercle), la désignation "Droits d\'auteur"';
