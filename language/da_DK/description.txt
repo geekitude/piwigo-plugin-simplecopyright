@@ -1,0 +1,1 @@
+Viser en global ophavsretbesked, med hensyntagen til et tilsvarende IPTC-felt, hvis det er opsat.
