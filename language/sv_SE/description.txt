@@ -1,0 +1,1 @@
+Visa en global upphovsrätt som respekterar motsvarande IPTC-fält om den är inställd.
