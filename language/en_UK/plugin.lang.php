@@ -9,7 +9,7 @@
     $lang['Custom license label shown by Piwigo'] = 'Custom license label shown by Piwigo';
     $lang['Any license requires a link to a full description to be of any value'] = 'Any license requires a link to a full description to be of any value';
     $lang['Will be shown as a tooltip when hovering license link'] = 'Will be shown as a tooltip when hovering license link';
-    $lang['Image pages'] = 'Pages des images';
+$lang['Image pages'] = 'Image pages';
     $lang['Display image page Copyright section'] = 'Display image page Copyright section';
     $lang['If image has no Copyright info, display default license'] = 'If image has no Copyright info, display default license';
     $lang['Turn recognizable license label in Copyright metadata into a link to that license details'] = 'Turn recognizable license label in Copyright metadata into a link to that license details';
@@ -68,4 +68,3 @@
     $lang['label_no-license'] = 'All Rights Reserved';
     $lang['url_no-license']   = 'https://en.wikipedia.org/wiki/All_rights_reserved';
     $lang['descr_no-license'] = 'There is no license granting you with any right to reuse any material from this website in any way, refer to copyrights. Note that “All Rights Reserved” formula does not have any legal value left in any juridiction but is used here to prevent ambiguity.';
-?>
