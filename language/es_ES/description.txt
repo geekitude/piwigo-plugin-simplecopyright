@@ -1,0 +1,1 @@
+Muestra un copyright global, respetando el campo de IPTC correspondiente si está definido.
