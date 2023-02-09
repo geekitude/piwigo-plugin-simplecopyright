@@ -1,0 +1,1 @@
+Afficher une formule de droits d'auteur (copyright) globale en respectant le champs IPTC correspondant s'il est défini.
