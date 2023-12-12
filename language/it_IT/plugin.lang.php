@@ -25,3 +25,10 @@ $lang['Image does not contain any Copyright, it would be wise to add one in meta
 $lang['Image pages'] = 'Pagine delle immagini.';
 $lang['It is possible and often advised (or even required in some countries) to add the licence after the Copyright, here come a few examples:'] = 'È possibile, e spesso consigliabile, (od addirittura obbligatorio in alcune nazioni) far seguire al diritto d\'autore la corrispondente licenza, come mostriamo di seguito con alcuni esempi:';
 $lang['Label:'] = 'Etichetta:';
+$lang['License'] = 'Licenza';
+$lang['No license'] = 'Nessuna licenza';
+$lang['Note that displaying a copyright and/or a license on a web page isn\'t as legally efficient as adding them in picture\'s metadatas, it only makes them more visible.'] = 'Notare che mostrare un diritto d\'autore e/o licenza su di una pagina web non è altrettanto efficace quanto aggiungerli direttamente nei metadati dell\'immagine, sono soltanto più visibili.';
+$lang['Note that the abbreviation might not be acceptable in some countries'] = 'Notare che l\'abbreviazione potrebbe non essere considerata valida in alcuni paesi.';
+$lang['Short description:'] = 'Descrizione accorciata:';
+$lang['Summary:'] = 'Sommario:';
+$lang['URL:'] = 'URL:';
