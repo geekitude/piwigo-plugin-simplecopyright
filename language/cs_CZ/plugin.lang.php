@@ -6,7 +6,7 @@
 // | file that was distributed with this source code.                      |
 // +-----------------------------------------------------------------------+
 $lang['Will be shown as a tooltip when hovering license link'] = 'Zobrazí se jako nápověda (tooltip) při najetí myší na odkaz na licenci';
-$lang['Custom license label shown by Piwigo'] = 'Štítek vlastní licence co zobrazí Piwigo';
+$lang['Custom license label shown by Piwigo'] = 'Název, který zobrazí Piwigo u vlastní licence';
 $lang['Examples of recognizable license labels:'] = 'Příklady rozpoznatelných licenčních štítků:';
 $lang['Label:'] = 'Štítek:';
 $lang['License'] = 'Licence';
